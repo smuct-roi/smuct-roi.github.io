@@ -1,0 +1,30 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: News
+    url: 'post'
+    weight: 10
+  - name: People
+    url: people
+    weight: 20
+  - name: Projects
+    url: research
+    weight: 30
+  - name: Publications
+    url: publication
+    weight: 40
+  - name: Seminar
+    url: event
+    weight: 50
+  - name: MSc in NLP
+    url: https://www.cardiff.ac.uk/study/postgraduate/taught/courses/course/msc-natural-language-processing
+    weight: 60
+  - name: Workshop
+    url: https://www.cardiffnlpworkshop.org/
+    weight: 70
+  - name: Hackathon
+    url: hackathon
+    weight: 80

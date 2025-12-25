@@ -1,0 +1,268 @@
+%%%%%%%%%%%%%%%%%%%%%%%% ADD NEW ENTRIES HERE %%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{fisas-etal-2020-collfren,
+    title = "{C}oll{F}r{E}n: Rich Bilingual {E}nglish{--}{F}rench Collocation Resource",
+    author = "Fisas, Beatriz  and
+      Espinosa Anke, Luis  and
+      Codina-Filb{\'a}, Joan  and
+      Wanner, Leo",
+    booktitle = "Proceedings of the Joint Workshop on Multiword Expressions and Electronic Lexicons",
+    month = dec,
+    year = "2020",
+    address = "online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.mwe-1.1",
+    pages = "1--12",
+    abstract = "Collocations in the sense of idiosyncratic lexical co-occurrences of two syntactically bound words traditionally pose a challenge to language learners and many Natural Language Processing (NLP) applications alike. Reliable ground truth (i.e., ideally manually compiled) resources are thus of high value. We present a manually compiled bilingual English{--}French collocation resource with 7,480 collocations in English and 6,733 in French. Each collocation is enriched with information that facilitates its downstream exploitation in NLP tasks such as machine translation, word sense disambiguation, natural language generation, relation classification, and so forth. Our proposed enrichment covers: the semantic category of the collocation (its lexical function), its vector space representation (for each individual word as well as their joint collocation embedding), a subcategorization pattern of both its elements, as well as their corresponding BabelNet id, and finally, indices of their occurrences in large scale reference corpora.",
+}
+
+@inproceedings{alghanmi-etal-2020-combining,
+    title = "Combining {BERT} with Static Word Embeddings for Categorizing Social Media",
+    author = "Alghanmi, Israa  and
+      Espinosa Anke, Luis  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the Sixth Workshop on Noisy User-generated Text (W-NUT 2020)",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.wnut-1.5",
+    doi = "10.18653/v1/2020.wnut-1.5",
+    pages = "28--33",
+    abstract = "Pre-trained neural language models (LMs) have achieved impressive results in various natural language processing tasks, across different languages. Surprisingly, this extends to the social media genre, despite the fact that social media often has very different characteristics from the language that LMs have seen during training. A particularly striking example is the performance of AraBERT, an LM for the Arabic language, which is successful in categorizing social media posts in Arabic dialects, despite only having been trained on Modern Standard Arabic. Our hypothesis in this paper is that the performance of LMs for social media can nonetheless be improved by incorporating static word vectors that have been specifically trained on social media. We show that a simple method for incorporating such word vectors is indeed successful in several Arabic and English benchmarks. Curiously, however, we also find that similar improvements are possible with word vectors that have been trained on traditional text sources (e.g. Wikipedia).",
+}
+
+@inproceedings{jeawak-etal-2020-cardiff,
+    title = "{C}ardiff {U}niversity at {S}em{E}val-2020 Task 6: Fine-tuning {BERT} for Domain-Specific Definition Classification",
+    author = "Jeawak, Shelan  and
+      Espinosa-Anke, Luis  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the Fourteenth Workshop on Semantic Evaluation",
+    month = dec,
+    year = "2020",
+    address = "Barcelona (online)",
+    publisher = "International Committee for Computational Linguistics",
+    url = "https://aclanthology.org/2020.semeval-1.44",
+    doi = "10.18653/v1/2020.semeval-1.44",
+    pages = "361--366",
+    abstract = "We describe the system submitted to SemEval-2020 Task 6, Subtask 1. The aim of this subtask is to predict whether a given sentence contains a definition or not. Unsurprisingly, we found that strong results can be achieved by fine-tuning a pre-trained BERT language model. In this paper, we analyze the performance of this strategy. Among others, we show that results can be improved by using a two-step fine-tuning process, in which the BERT model is first fine-tuned on the full training set, and then further specialized towards a target domain.",
+}
+
+@inproceedings{perez-almendros-etal-2020-dont,
+    title = "Don{'}t Patronize Me! An Annotated Dataset with Patronizing and Condescending Language towards Vulnerable Communities",
+    author = "Perez Almendros, Carla  and
+      Espinosa Anke, Luis  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2020.coling-main.518",
+    doi = "10.18653/v1/2020.coling-main.518",
+    pages = "5891--5902",
+    abstract = "In this paper, we introduce a new annotated dataset which is aimed at supporting the development of NLP models to identify and categorize language that is patronizing or condescending towards vulnerable communities (e.g. refugees, homeless people, poor families). While the prevalence of such language in the general media has long been shown to have harmful effects, it differs from other types of harmful language, in that it is generally used unconsciously and with good intentions. We furthermore believe that the often subtle nature of patronizing and condescending language (PCL) presents an interesting technical challenge for the NLP community. Our analysis of the proposed dataset shows that identifying PCL is hard for standard NLP models, with language models such as BERT achieving the best results.",
+}
+
+@inproceedings{alshaikh-etal-2020-mixture,
+    title = "A Mixture-of-Experts Model for Learning Multi-Facet Entity Embeddings",
+    author = "Alshaikh, Rana  and
+      Bouraoui, Zied  and
+      Jeawak, Shelan  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2020.coling-main.449",
+    doi = "10.18653/v1/2020.coling-main.449",
+    pages = "5124--5135",
+    abstract = "Various methods have already been proposed for learning entity embeddings from text descriptions. Such embeddings are commonly used for inferring properties of entities, for recommendation and entity-oriented search, and for injecting background knowledge into neural architectures, among others. Entity embeddings essentially serve as a compact encoding of a similarity relation, but similarity is an inherently multi-faceted notion. By representing entities as single vectors, existing methods leave it to downstream applications to identify these different facets, and to select the most relevant ones. In this paper, we propose a model that instead learns several vectors for each entity, each of which intuitively captures a different aspect of the considered domain. We use a mixture-of-experts formulation to jointly learn these facet-specific embeddings. The individual entity embeddings are learned using a variant of the GloVe model, which has the advantage that we can easily identify which properties are modelled well in which of the learned embeddings. This is exploited by an associated gating network, which uses pre-trained word vectors to encourage the properties that are modelled by a given embedding to be semantically coherent, i.e. to encourage each of the individual embeddings to capture a meaningful facet.",
+}
+
+@inproceedings{ito-etal-2020-learning,
+    title = "Learning Company Embeddings from Annual Reports for Fine-grained Industry Characterization",
+    author = "Ito, Tomoki  and
+      Collados, Jose Camacho  and
+      Sakaji, Hiroki  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the Second Workshop on Financial Technology and Natural Language Processing",
+    month = "5 " # jan,
+    year = "2020",
+    address = "Kyoto, Japan",
+    publisher = "-",
+    url = "https://aclanthology.org/2020.finnlp-1.5",
+    pages = "27--33",
+}
+
+@inproceedings{chiang-etal-2020-understanding,
+    title = "Understanding the Source of Semantic Regularities in Word Embeddings",
+    author = "Chiang, Hsiao-Yu  and
+      Camacho-Collados, Jose  and
+      Pardos, Zachary",
+    booktitle = "Proceedings of the 24th Conference on Computational Natural Language Learning",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.conll-1.9",
+    doi = "10.18653/v1/2020.conll-1.9",
+    pages = "119--131",
+    abstract = "Semantic relations are core to how humans understand and express concepts in the real world using language. Recently, there has been a thread of research aimed at modeling these relations by learning vector representations from text corpora. Most of these approaches focus strictly on leveraging the co-occurrences of relationship word pairs within sentences. In this paper, we investigate the hypothesis that examples of a lexical relation in a corpus are fundamental to a neural word embedding{'}s ability to complete analogies involving the relation. Our experiments, in which we remove all known examples of a relation from training corpora, show only marginal degradation in analogy completion performance involving the removed relation. This finding enhances our understanding of neural word embeddings, showing that co-occurrence information of a particular semantic relation is not the main source of their structural regularity.",
+}
+
+@inproceedings{raganato-etal-2020-xl,
+    title = "{XL}-{W}i{C}: A Multilingual Benchmark for Evaluating Semantic Contextualization",
+    author = "Raganato, Alessandro  and
+      Pasini, Tommaso  and
+      Camacho-Collados, Jose  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.emnlp-main.584",
+    doi = "10.18653/v1/2020.emnlp-main.584",
+    pages = "7193--7206",
+    abstract = "The ability to correctly model distinct meanings of a word is crucial for the effectiveness of semantic representation techniques. However, most existing evaluation benchmarks for assessing this criterion are tied to sense inventories (usually WordNet), restricting their usage to a small subset of knowledge-based representation techniques. The Word-in-Context dataset (WiC) addresses the dependence on sense inventories by reformulating the standard disambiguation task as a binary classification problem; but, it is limited to the English language. We put forward a large multilingual benchmark, XL-WiC, featuring gold standards in 12 new languages from varied language families and with different degrees of resource availability, opening room for evaluation scenarios such as zero-shot cross-lingual transfer. We perform a series of experiments to determine the reliability of the datasets and to set performance baselines for several recent contextualized multilingual models. Experimental results show that even when no tagged instances are available for a target language, models trained solely on the English data can attain competitive performance in the task of distinguishing different meanings of a word, even for distant languages. XL-WiC is available at https://pilehvar.github.io/xlwic/.",
+}
+
+@inproceedings{loureiro-camacho-collados-2020-dont,
+    title = "Don{'}t Neglect the Obvious: On the Role of Unambiguous Words in Word Sense Disambiguation",
+    author = "Loureiro, Daniel  and
+      Camacho-Collados, Jose",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.emnlp-main.283",
+    doi = "10.18653/v1/2020.emnlp-main.283",
+    pages = "3514--3520",
+    abstract = "State-of-the-art methods for Word Sense Disambiguation (WSD) combine two different features: the power of pre-trained language models and a propagation method to extend the coverage of such models. This propagation is needed as current sense-annotated corpora lack coverage of many instances in the underlying sense inventory (usually WordNet). At the same time, unambiguous words make for a large portion of all words in WordNet, while being poorly covered in existing sense-annotated corpora. In this paper, we propose a simple method to provide annotations for most unambiguous words in a large corpus. We introduce the UWA (Unambiguous Word Annotations) dataset and show how a state-of-the-art propagation-based model can use it to extend the coverage and quality of its word sense embeddings by a significant margin, improving on its original results on WSD.",
+}
+
+@inproceedings{owen-etal-2020-towards,
+    title = "Towards Preemptive Detection of Depression and Anxiety in {T}witter",
+    author = "Owen, David  and
+      Camacho-Collados, Jose  and
+      Espinosa Anke, Luis",
+    booktitle = "Proceedings of the Fifth Social Media Mining for Health Applications Workshop {\&} Shared Task",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.smm4h-1.12",
+    pages = "82--89",
+    abstract = "Depression and anxiety are psychiatric disorders that are observed in many areas of everyday life. For example, these disorders manifest themselves somewhat frequently in texts written by nondiagnosed users in social media. However, detecting users with these conditions is not a straightforward task as they may not explicitly talk about their mental state, and if they do, contextual cues such as immediacy must be taken into account. When available, linguistic flags pointing to probable anxiety or depression could be used by medical experts to write better guidelines and treatments. In this paper, we develop a dataset designed to foster research in depression and anxiety detection in Twitter, framing the detection task as a binary tweet classification problem. We then apply state-of-the-art classification models to this dataset, providing a competitive set of baselines alongside qualitative error analysis. Our results show that language models perform reasonably well, and better than more traditional baselines. Nonetheless, there is clear room for improvement, particularly with unbalanced training sets and in cases where seemingly obvious linguistic cues (keywords) are used counter-intuitively.",
+}
+
+@inproceedings{roig-mirapeix-etal-2020-definition,
+    title = "Definition Extraction Feature Analysis: From Canonical to Naturally-Occurring Definitions",
+    author = "Roig Mirapeix, Mireia  and
+      Espinosa Anke, Luis  and
+      Camacho-Collados, Jose",
+    booktitle = "Proceedings of the Workshop on the Cognitive Aspects of the Lexicon",
+    month = dec,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.cogalex-1.10",
+    pages = "81--91",
+    abstract = "Textual definitions constitute a fundamental source of knowledge when seeking the meaning of words, and they are the cornerstone of lexical resources like glossaries, dictionaries, encyclopedia or thesauri. In this paper, we present an in-depth analytical study on the main features relevant to the task of definition extraction. Our main goal is to study whether linguistic structures from canonical (the Aristotelian or genus et differentia model) can be leveraged to retrieve definitions from corpora in different domains of knowledge and textual genres alike. To this end, we develop a simple linear classifier and analyze the contribution of several (sets of) linguistic features. Finally, as a result of our experiments, we also shed light on the particularities of existing benchmarks as well as the most challenging aspects of the task.",
+}
+
+@inproceedings{barbieri-etal-2020-tweeteval,
+    title = "{T}weet{E}val: Unified Benchmark and Comparative Evaluation for Tweet Classification",
+    author = "Barbieri, Francesco  and
+      Camacho-Collados, Jose  and
+      Espinosa Anke, Luis  and
+      Neves, Leonardo",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2020",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.findings-emnlp.148",
+    doi = "10.18653/v1/2020.findings-emnlp.148",
+    pages = "1644--1650",
+    abstract = "The experimental landscape in natural language processing for social media is too fragmented. Each year, new shared tasks and datasets are proposed, ranging from classics like sentiment analysis to irony detection or emoji prediction. Therefore, it is unclear what the current state of the art is, as there is no standardized evaluation protocol, neither a strong set of baselines trained on such domain-specific data. In this paper, we propose a new evaluation framework (TweetEval) consisting of seven heterogeneous Twitter-specific classification tasks. We also provide a strong set of baselines as starting point, and compare different language modeling pre-training strategies. Our initial experiments show the effectiveness of starting off with existing pre-trained generic language models, and continue training them on Twitter corpora.",
+}
+
+@inproceedings{pasini-camacho-collados-2020-short,
+    title = "A Short Survey on Sense-Annotated Corpora",
+    author = "Pasini, Tommaso  and
+      Camacho-Collados, Jose",
+    booktitle = "Proceedings of the 12th Language Resources and Evaluation Conference",
+    month = may,
+    year = "2020",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2020.lrec-1.706",
+    pages = "5759--5765",
+    abstract = "Large sense-annotated datasets are increasingly necessary for training deep supervised systems in Word Sense Disambiguation. However, gathering high-quality sense-annotated data for as many instances as possible is a laborious and expensive task. This has led to the proliferation of automatic and semi-automatic methods for overcoming the so-called knowledge-acquisition bottleneck. In this short survey we present an overview of sense-annotated corpora, annotated either manually- or (semi)automatically, that are currently available for different languages and featuring distinct lexical resources as inventory of senses, i.e. WordNet, Wikipedia, BabelNet. Furthermore, we provide the reader with general statistics of each dataset and an analysis of their specific features.",
+    language = "English",
+    ISBN = "979-10-95546-34-4",
+}
+
+@inproceedings{doval-etal-2020-robustness,
+    title = "On the Robustness of Unsupervised and Semi-supervised Cross-lingual Word Embedding Learning",
+    author = "Doval, Yerai  and
+      Camacho-Collados, Jose  and
+      Espinosa Anke, Luis  and
+      Schockaert, Steven",
+    booktitle = "Proceedings of the 12th Language Resources and Evaluation Conference",
+    month = may,
+    year = "2020",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2020.lrec-1.495",
+    pages = "4013--4023",
+    abstract = "Cross-lingual word embeddings are vector representations of words in different languages where words with similar meaning are represented by similar vectors, regardless of the language. Recent developments which construct these embeddings by aligning monolingual spaces have shown that accurate alignments can be obtained with little or no supervision, which usually comes in the form of bilingual dictionaries. However, the focus has been on a particular controlled scenario for evaluation, and there is no strong evidence on how current state-of-the-art systems would fare with noisy text or for language pairs with major linguistic differences. In this paper we present an extensive evaluation over multiple cross-lingual embedding models, analyzing their strengths and limitations with respect to different variables such as target language, training corpora and amount of supervision. Our conclusions put in doubt the view that high-quality cross-lingual embeddings can always be learned without much supervision.",
+    language = "English",
+    ISBN = "979-10-95546-34-4",
+}
+
+@inproceedings{camacho-collados-pilehvar-2020-embeddings,
+    title = "Embeddings in Natural Language Processing",
+    author = "Camacho-Collados, Jose  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics: Tutorial Abstracts",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "International Committee for Computational Linguistics",
+    url = "https://aclanthology.org/2020.coling-tutorials.2",
+    doi = "10.18653/v1/2020.coling-tutorials.2",
+    pages = "10--15",
+    abstract = "Embeddings have been one of the most important topics of interest in NLP for the past decade. Representing knowledge through a low-dimensional vector which is easily integrable in modern machine learning models has played a central role in the development of the field. Embedding techniques initially focused on words but the attention soon started to shift to other forms. This tutorial will provide a high-level synthesis of the main embedding techniques in NLP, in the broad sense. We will start by conventional word embeddings (e.g., Word2Vec and GloVe) and then move to other types of embeddings, such as sense-specific and graph alternatives. We will finalize with an overview of the trending contextualized representations (e.g., ELMo and BERT) and explain their potential and impact in NLP.",
+}
+
+
+@inproceedings{edwards-etal-2020-go,
+    title = "Go Simple and Pre-Train on Domain-Specific Corpora: On the Role of Training Data for Text Classification",
+    author = "Edwards, Aleksandra  and
+      Camacho-Collados, Jose  and
+      De Ribaupierre, H{\'e}l{\`e}ne  and
+      Preece, Alun",
+    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2020.coling-main.481",
+    doi = "10.18653/v1/2020.coling-main.481",
+    pages = "5522--5529",
+    abstract = "Pre-trained language models provide the foundations for state-of-the-art performance across a wide range of natural language processing tasks, including text classification. However, most classification datasets assume a large amount labeled data, which is commonly not the case in practical settings. In particular, in this paper we compare the performance of a light-weight linear classifier based on word embeddings, i.e., fastText (Joulin et al., 2017), versus a pre-trained language model, i.e., BERT (Devlin et al., 2019), across a wide range of datasets and classification tasks. In general, results show the importance of domain-specific unlabeled data, both in the form of word embeddings or language models. As for the comparison, BERT outperforms all baselines in standard datasets with large training sets. However, in settings with small training datasets a simple method like fastText coupled with domain-specific word embeddings performs equally well or better than BERT, even when pre-trained on domain-specific data.",
+}
