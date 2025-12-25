@@ -16,12 +16,14 @@ content:
   # Choose which groups/teams of users to display.
   #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
   user_groups:
-  - Core Faculty
-  - Associated Faculty
+  # - Faculty Advisor
+  - Supervisor
+  # - Associated Faculty
   - Research Staff
-  - PhD Students
-  - Visitors
-  - Former Members
+  - Graduate Students
+  - Undergraduate Students
+  # - Visitors
+  # - Former Members
 design:
   show_interests: true
   show_role: true

@@ -17,14 +17,12 @@ marketing:
   seo:
     site_type: Organization
     local_business_type: ''
-    org_name: 'CardiffNLP'
-    description: 'Research Group in Natural Language Processing at Cardiff University.'
-    twitter: 'Cardiff_NLP'
+    org_name: 'CSECU-DSG'
+    description: 'Research Group in Natural Language Processing at University of Chittagong.'
+    twitter: 'csecudsg'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
   verification:
     google: ''
     baidu: ''
@@ -38,8 +36,8 @@ header:
     align: r
     show_logo: true
     show_language: false
-    show_day_night: false
-    show_search: true
+    show_day_night: true
+    show_search: false
     highlight_active_link: true
 
 # Site footer
@@ -75,7 +73,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/cardiffnlp/cardiffnlp.github.io'
+    url: 'https://github.com/CSECU-DSG/csecu-dsg.github.io/'
     content_dir: content
     branch: main
   avatar:
@@ -88,13 +86,8 @@ features:
       show_count: true
     commento:
       url: ''
-    giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
   search:
-    provider: wowchemy
+    provider: wowchemy and CardiffNLP
     algolia:
       app_id: ''
       api_key: ''
@@ -103,14 +96,19 @@ features:
   map:
     provider: 'mapnik'
     api_key: ''
-    zoom: 15
+    zoom: 30
+
+  
 
 # Extensions
 
 extensions:
-  decap_cms:
+  cms:
     branch: main
     local_backend: false
+  isotope:
+    # Enable if you use the Portfolio widget or Publication filter
+    enable: true
   academicons:
     enable: true
 

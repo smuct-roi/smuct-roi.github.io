@@ -1,15 +1,16 @@
 ---
 # A Demo section created with the Blank widget.
 # Any elements can be added in the body: https://wowchemy.com/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
+# Add more sections by duplicating this file and customizing to your requirementss.
 
 widget: blank  # See https://wowchemy.com/docs/page-builder/
 headless: true  # This file represents a page section.
 weight: 10  # Order that this section will appear.
 title: 
-  Natural Language Processing @ Cardiff University
+  Data Science Research Group @ University of Chittagong
 subtitle:
-  "**Welcome to CardiffNLP!** The [Research Group in Natural Language Processing](https://www.cardiff.ac.uk/research/explore/research-units/natural-language-processing) at [Cardiff University](https://www.cardiff.ac.uk/)"
+  "**Welcome to [CSECU-DSG Lab](https://csecu-dsg.github.io) at the [University of Chittagong](https://cu.ac.bd/)!**"
+
 design:
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns: "1"
@@ -18,19 +19,66 @@ design:
 
 <div style="width:70%; float: left;">
 
-<center>{{< figure src="group_pic.png" caption="Team Members" >}}</center>
+<style>
+  ul {
+  position: relative;
+  list-style: none;
+ 
+  }
 
-**Natural Language Processing** (NLP) is a subfield of **Artificial Intelligence** concerned with how computers deal with language.
-NLP is a growing global industry with many active research directions.
-In CardiffNLP, we work on various aspects of **theoretical and applied NLP**.
-We believe that **NLP is interdisciplinary** in nature, and that is why we are interested in both **developing NLP technologies** and **involving domain experts** who can bring the field forward, and **enable impact** in applications that matter.
+  .bullet{
+  li::before {
+    content: '❖';
+    position: absolute;
+    left: 0;
+    color: LightSeaGreen;
+  }
+  /* .justify{
+    text-align: justify;
+    text-justify: auto;
+  } */
+  }
+</style>
 
-We conduct [active research](research) in diverse NLP topics such as lexical semantics, commonsense reasoning, multilinguality, downstream and social NLP applications (e.g. health, social media) and many others.
-Check our [team members' websites](people) and [publications](publication) to find out more!  
+<center>{{< figure src="csecudsg.jpg" caption="Team Members" height="200" width="700">}}</center>
+<p align="justify">
+CSECU-DSG is based in the Department of Computer Science and Engineering and is led by <a href="https://cu.ac.bd/public_profile/index.php?ein=5905">Dr. Abu Nowshed Chy</a>. We are a group of dedicated researchers working to leverage the intricacies of human language and expression to create a technologically advanced, safe, and inclusive society. Our research encompasses diverse aspects of Natural Language Processing, including: 
+</p>
+
+
+<ul class="bullet">
+
+   <li > Information Retrieval </li> 
+   
+   <li> Opinion Mining </li> 
+
+   <li>Multilingual and Low-resource NLP </li> 
+
+   <li> Lexical Semantics </li> 
+
+   <li> Computational Linguistics </li> 
+
+   <li> Multimodal NLP </li> 
+
+   <li> Social Computing </li> 
+
+   <li> Crisis Informatics </li> 
+  
+ </ul>
+
+<p align="justify">
+ This lab started its journey in 2020 and since then has had numerous achievements, including publications in reputed international journals and conferences and top honors in global competitions like CASE@EMNLP, CEREX@FIRE, CLEF, and SemEval. 
+
+Our lab fosters a cohesive, collaborative, and thriving environment: Members of the CSECU-DSG group engage in numerous internal collaborations, promoting a culture of teamwork and shared expertise. Our research also benefits from an extensive global network of collaborations. 
+</p>
+
+To learn more about CSECU-DSG, visit our [publications](publication), [projects](research), and [members’](people) websites. 
+
+ 
 </div>
 
 <div style="margin-left: 960px;">
-<a class="twitter-timeline" data-width="500" data-height="750" href="https://twitter.com/Cardiff_NLP?ref_src=twsrc%5Etfw">Tweets by Cardiff_NLP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-width="500" data-height="750" href="https://twitter.com/CSECU_DSG?ref_src=twsrc%5Etfw">Tweets by CSECU-DSG</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 </div>

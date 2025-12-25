@@ -10,7 +10,7 @@ headless: false
 weight: 10
 
 title: Projects
-subtitle: 'We are committed to **open science**, and most of our projects and publications are made **open-source**, including data and code. Here is a sample of open projects at CardiffNLP.'
+subtitle: 
 
 content:
   # Page type to display. E.g. project.
@@ -27,12 +27,15 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Twitter
-    tag: twitter
-  - name: Embeddings
-    tag: embeddings
-  - name: Shared Tasks
-    tag: sharedtask
+  - name: Information Extraction
+    tag: ife
+  - name: Multimodal NLP
+    tag: mmn
+  - name: Multilingual and Low Resource NLP
+    tag: mlrp
+  - name: Lexical Semantics
+    tag: ls
+ 
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

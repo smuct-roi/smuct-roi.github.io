@@ -1,4 +1,4 @@
-# CardiffNLP's Group Website
+# CSECU-DSG's Group Website
 
 Based on [Wowchemy's Research Group Template](https://github.com/wowchemy/starter-hugo-research-group) for [Hugo](https://github.com/gohugoio/hugo).
 

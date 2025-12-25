@@ -31,10 +31,11 @@ tags = ["academic",
         "one page",
         "customizable",
         "technical",
-        "slide"
+        "slide",
+        "hugo-shortcode-gallery"
         ]
 features = ["page builder", "widgets", "themes", "search", "research publication system", "filterable portfolio",
-            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form"]
+            "blog", "create courses", "talks", "events", "slides", "gallery", "contact form", "hugo-shortcode-gallery"]
 
 [author]
   name = "George Cushen"

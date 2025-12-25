@@ -1,19 +1,19 @@
 ---
 # Display name
-title: Nurul Ariyani
+title: Muhammed
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: PhD Student
+role: B.Sc. Student
 
 # Organizations/Affiliations
 organizations:
-- name: School of Computer Science and Informatics
-  url: https://www.cardiff.ac.uk/computer-science/
-- name: Cardiff University
-  url: https://www.cardiff.ac.uk/
+- name: Department of Computer Science and Engineering
+  url: https://cu.ac.bd/cse/
+- name: University of Chittagong
+  url: https://cu.ac.bd/
 
 # Short bio (displayed in user profile at end of posts)
 bio: 
@@ -58,9 +58,9 @@ social:
 # - icon: github
 #   icon_pack: fab
 #   link: https://github.com/feralvam
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/in/nurulariyani/
+# - icon: linkedin
+#   icon_pack: fab
+#   link: https://www.linkedin.com/in/nurulariyani/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -76,7 +76,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- PhD Students
+- Undergraduate Students
 ---
 
 
