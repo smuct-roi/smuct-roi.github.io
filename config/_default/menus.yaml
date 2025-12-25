@@ -4,9 +4,6 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: Home
-    url: '#'
-    weight: 1
   - name: News
     url: 'post'
     weight: 10
@@ -19,18 +16,15 @@ main:
   - name: Publications
     url: publication
     weight: 40
-  - name: Resources
-    url: resources
+  - name: Seminar
+    url: event
     weight: 50
-  - name: Gallery
-    url: gallery
-    weight: 50
-  # - name: MSc in NLP
-  #   url: https://www.cardiff.ac.uk/study/postgraduate/taught/courses/course/msc-natural-language-processing
-  #   weight: 60
-  # - name: Workshop
-  #   url: https://www.cardiffnlpworkshop.org/
-  #   weight: 70
-  # - name: Hackathon
-  #   url: hackathon
-  #   weight: 80
+  - name: MSc in NLP
+    url: https://www.cardiff.ac.uk/study/postgraduate/taught/courses/course/msc-natural-language-processing
+    weight: 60
+  - name: Workshop
+    url: https://www.cardiffnlpworkshop.org/
+    weight: 70
+  - name: Hackathon
+    url: hackathon
+    weight: 80
