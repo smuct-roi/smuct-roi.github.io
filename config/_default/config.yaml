@@ -4,8 +4,8 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: CSECU-DSG # Website name
-baseURL: 'https://csecu-dsg.github.io/' # Website URL
-copyright: '© {year} CSECU-DSG' # Footer text, e.g. '© {year} Me'
+baseURL: 'https://https://smuct-roi.github.io//' # Website URL
+copyright: '© {year}SMUCT-ROI' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE

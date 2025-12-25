@@ -17,9 +17,9 @@ marketing:
   seo:
     site_type: Organization
     local_business_type: ''
-    org_name: 'CSECU-DSG'
+    org_name: 'SMUCT-roi'
     description: 'Research Group in Natural Language Processing at University of Chittagong.'
-    twitter: 'csecudsg'
+    twitter: 'SMUCT-ROI'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -73,7 +73,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/CSECU-DSG/csecu-dsg.github.io/'
+    url: 'https://github.com/smuct-roi.github.io/'
     content_dir: content
     branch: main
   avatar:
