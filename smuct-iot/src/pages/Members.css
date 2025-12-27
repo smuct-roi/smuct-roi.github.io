@@ -1,0 +1,128 @@
+.members-wrapper {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+.members-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.members-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.members-title {
+  font-size: 3rem;
+  color: #00ff66;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+  margin-bottom: 1rem;
+}
+
+.members-subtitle {
+  color: #9ca3af;
+  font-size: 1.125rem;
+}
+
+.members-section {
+  margin-bottom: 5rem;
+}
+
+.members-section-title {
+  font-size: 1.5rem;
+  border-left: 4px solid #00ff66;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.members-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.members-grid-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.members-grid-4 { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+
+/* Card Styles */
+.member-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  border-color: #00ff66;
+}
+
+.member-avatar-wrapper {
+  position: relative;
+  height: 250px;
+}
+
+.member-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-dept-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #00ff66;
+  color: #000;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.member-info {
+  padding: 1.5rem;
+}
+
+.member-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  color: #00ff66;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.member-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.member-link {
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.member-link:hover {
+  color: #00ff66;
+}
+
+.member-svg-icon {
+  width: 20px;
+  height: 20px;
+}

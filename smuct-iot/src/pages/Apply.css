@@ -1,0 +1,153 @@
+/* Page Layout */
+.apply-page {
+  padding: 5rem 1rem;
+}
+
+.form-card {
+  max-width: 48rem;
+  margin: 0 auto;
+  background-color: #111;
+  border: 1px solid #1f2937;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .form-card { padding: 3rem; }
+}
+
+/* Header */
+.form-header {
+  margin-bottom: 2.5rem;
+}
+
+.form-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: #6b7280;
+}
+
+/* Form Styling */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  background-color: black;
+  border: 1px solid #1f2937;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #00ff66;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-container {
+  padding-top: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #00ff66;
+  color: black;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 102, 0.3);
+}
+
+.submit-btn:hover {
+  background-color: #00cc55;
+  transform: translateY(-1px);
+}
+
+/* Success State */
+.success-wrapper {
+  padding: 10rem 1rem;
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.success-icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(0, 255, 102, 0.2);
+  color: #00ff66;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.success-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.success-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.success-text {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.reset-btn {
+  color: #00ff66;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="footer-root">
+      <div className="footer-container">
+        <div className="footer-grid">
+          
+          {/* Brand Section */}
+          <div className="footer-brand-section">
+            <div className="footer-logo-wrapper">
+              <div className="footer-logo-box">R</div>
+              <span className="footer-logo-text">Robotics & IoT Committee</span>
+            </div>
+            <p className="footer-description">
+              A community of innovators, builders, and dreamers pushing the boundaries of technology.
+              Focusing on smart automation, embedded systems, and autonomous robotics.
+            </p>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="footer-links-column">
+            <h3 className="footer-heading">Quick Links</h3>
+            <ul className="footer-links-list">
+              <li><Link to="/projects" className="footer-link">Browse Projects</Link></li>
+              <li><Link to="/members" className="footer-link">Our Team</Link></li>
+              <li><Link to="/apply" className="footer-link">Join Us</Link></li>
+              <li><Link to="/admin" className="footer-link">Admin Portal</Link></li>
+            </ul>
+          </div>
+
+          {/* Social Section */}
+          <div className="footer-links-column">
+            <h3 className="footer-heading">Follow Us</h3>
+            <div className="footer-social-flex">
+              <a href="#" className="footer-link">GitHub</a>
+              <a href="#" className="footer-link">LinkedIn</a>
+              <a href="#" className="footer-link">Discord</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <p className="footer-copy">&copy; {new Date().getFullYear()} Robotics & IoT Committee. All rights reserved.</p>
+          <p className="footer-tagline">Designed for SMUCT Innovation Hub</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

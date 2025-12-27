@@ -1,0 +1,124 @@
+/* Layout & Container */
+.admin-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100-vh;
+}
+
+.admin-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header & Alert */
+.admin-header {
+  margin-bottom: 3rem;
+}
+
+.admin-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.admin-alert {
+  background-color: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  color: #fb923c;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Section Spacing */
+.admin-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Card Styling */
+.admin-card {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #1f2937;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.card-title.accent {
+  color: #00ff66;
+}
+
+/* Instruction List */
+.instruction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item-heading {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.item-text {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.code-block {
+  background-color: black;
+  padding: 0.25rem 0.5rem;
+  color: #ec4899;
+  border-radius: 0.25rem;
+}
+
+.pink {
+  color: #ec4899;
+}
+
+/* Workflow Status List */
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 0.5rem;
+}
+
+.label {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Status Badges */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.green { color: #00ff66; }
+.yellow { color: #eab308; }
+.blue { color: #3b82f6; }

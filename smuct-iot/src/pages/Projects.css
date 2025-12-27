@@ -1,0 +1,98 @@
+.projects-page {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.content-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Section */
+.page-header {
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.page-lead {
+  color: #9ca3af;
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+/* Filter Navigation */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.filter-pill {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.filter-pill.active {
+  background-color: #00ff66;
+  color: black;
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 102, 0.2);
+}
+
+.filter-pill.inactive {
+  background-color: #111827;
+  color: #9ca3af;
+  border-color: #1f2937;
+}
+
+.filter-pill.inactive:hover {
+  color: white;
+  border-color: #374151;
+}
+
+/* Responsive Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 0;
+  color: #4b5563;
+  font-style: italic;
+}
