@@ -24,5 +24,16 @@ export const posts = [
     content: '',
     image: '/postimages/p1.jpeg',
     source: 'google.com'
+  },
+{
+    id: 'news3',
+    title: 'Check-out ouer new web site:',
+    date: '2025-12-127',
+    author: 'SMUCT IoT Community',
+    category: PostCategory.COMMUNITY,
+    content: '',
+    image: '/postimages/p3.jpeg',
+    source: 'https://smuct-roi.github.io/'
   }
+
 ];
