@@ -11,6 +11,7 @@ html, body, #root {
 * {
   box-sizing: border-box; /* Ensures padding doesn't push width over 100% */
 }
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -24,20 +25,18 @@ html, body, #root {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -52,4 +51,26 @@ html, body, #root {
 
 .read-the-docs {
   color: #888;
+}
+
+/* --- MOBILE RESPONSIVE ADDITIONS --- */
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem; /* Reduce padding so content doesn't feel squeezed */
+  }
+
+  .logo {
+    height: 4em;   /* Shrink logo so it fits better on small screens */
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1em;  /* Tighter padding for mobile cards */
+  }
+  
+  /* If you have large headings, this ensures they fit */
+  h1 {
+    font-size: 2rem; 
+  }
 }

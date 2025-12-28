@@ -31,6 +31,7 @@
   align-items: center;
   overflow: hidden;
   background-color: var(--bg-black);
+  padding: 4rem 0; /* Added padding for mobile spacing */
 }
 
 .hero-bg {
@@ -63,7 +64,7 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2.2rem, 8vw, 4.5rem); /* Adjusted minimum slightly for small phones */
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -77,31 +78,37 @@
 }
 
 .hero-description {
- margin: auto;
+  margin: auto;
+  margin-bottom: 2.5rem;
   color: var(--text-grey);
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 4vw, 1.25rem); /* Responsive font size */
   max-width: 42rem;
   line-height: 1.6;
-  margin-bottom: 2.5rem;
 }
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap; /* Allows buttons to stack if screen is tiny */
   gap: 1rem;
 }
 
 /* Buttons */
-.primary-btn {
-  background: var(--primary-neon);
-  color: black;
+.primary-btn, .secondary-btn {
   padding: 1rem 2rem;
   border-radius: 0.75rem;
   font-weight: bold;
-  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: filter 0.3s;
+  justify-content: center;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.primary-btn {
+  background: var(--primary-neon);
+  color: black;
+  border: none;
 }
 
 .primary-btn:hover {
@@ -113,10 +120,6 @@
   background: transparent;
   border: 1px solid #374151;
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
 .secondary-btn:hover { background: rgba(255,255,255,0.05); }
@@ -148,7 +151,7 @@
 @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .stat-value {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: bold;
   color: white;
   text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
@@ -163,8 +166,8 @@
 }
 
 /* Sections General */
-.feed-section { background-color: var(--bg-dark-grey); padding: 5rem 0; }
-.projects-section { padding: 5rem 0; }
+.feed-section { background-color: var(--bg-dark-grey); padding: 4rem 0; }
+.projects-section { padding: 4rem 0; }
 
 .section-title { font-size: 2rem; font-weight: bold; }
 .section-subtitle { color: #6b7280; }
@@ -184,14 +187,17 @@
 /* Grids for Cards */
 .posts-grid, .projects-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
-@media (min-width: 768px) { .posts-grid, .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px) { .posts-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .posts-grid, .projects-grid { grid-template-columns: repeat(3, 1fr); } }
 
 /* Search Box */
-.search-box { position: relative; width: 100%; max-width: 320px; }
+.search-box { position: relative; width: 100%; }
+@media (min-width: 768px) { .search-box { max-width: 320px; } }
+
 .search-input {
   width: 100%;
   background: #111;
@@ -218,3 +224,17 @@
 
 .icon, .small-icon { width: 1.25rem; height: 1.25rem; margin-left: 0.5rem; }
 .view-all { color: var(--primary-neon); text-decoration: none; display: flex; align-items: center; }
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column; /* Stack buttons on very small phones */
+  }
+  .primary-btn, .secondary-btn {
+    width: 100%; /* Full width buttons for easier tapping */
+  }
+  .hero {
+    text-align: left; /* Keep left alignment for readability */
+    min-height: auto;
+  }
+}

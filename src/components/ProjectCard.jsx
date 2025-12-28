@@ -30,6 +30,7 @@ const ProjectCard = ({ project }) => {
         
         <div className="tech-section">
           <div className="section-label">Technologies</div>
+          <br></br>
           <div className="tech-list">
             {project.technologies.slice(0, 4).map((tech, idx) => (
               <span key={idx} className="tech-tag">

@@ -1,8 +1,14 @@
 .projects-page {
-  padding-top: 5rem;
+  padding-top: 3rem; /* Reduced for mobile */
   padding-bottom: 5rem;
   min-height: 100vh;
   background-color: black;
+}
+
+@media (min-width: 768px) {
+  .projects-page {
+    padding-top: 5rem; /* Original padding for desktop */
+  }
 }
 
 .content-container {
@@ -13,38 +19,54 @@
 
 /* Header Section */
 .page-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Tighter for mobile */
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    margin-bottom: 3rem;
+  }
 }
 
 .page-title {
-  font-size: 2.25rem;
+  /* clamp ensures font is 1.75rem on tiny screens and 2.25rem on large screens */
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
   font-weight: 700;
   color: white;
   margin-bottom: 1rem;
 }
 
 .page-lead {
+  margin: auto;
   color: #9ca3af;
   max-width: 42rem;
   line-height: 1.6;
+  font-size: 0.95rem; /* Slightly smaller for mobile readability */
+}
+
+@media (min-width: 768px) {
+  .page-lead {
+    font-size: 1rem;
+  }
 }
 
 /* Filter Navigation */
 .filter-bar {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem; /* Slightly tighter gap for mobile */
   margin-bottom: 2.5rem;
   overflow-x: auto;
   padding-bottom: 1rem;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+  -webkit-overflow-scrolling: touch; /* Ensures smooth momentum scroll on iPhones */
 }
 
 .filter-bar::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari */
+  display: none;
 }
 
 .filter-pill {
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.25rem; /* Slightly smaller padding for mobile */
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 700;
@@ -52,6 +74,12 @@
   white-space: nowrap;
   transition: all 0.2s ease-in-out;
   border: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .filter-pill {
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .filter-pill.active {
@@ -75,12 +103,18 @@
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Tighter gap on mobile */
+}
+
+@media (min-width: 640px) { /* Added a small tablet/large phone breakpoint */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 768px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 

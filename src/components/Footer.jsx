@@ -11,12 +11,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand-section">
             <div className="footer-logo-wrapper">
-              <div className="footer-logo-box">R</div>
-              <span className="footer-logo-text">Robotics & IoT Committee</span>
+              
+              <span className="footer-logo-text">SMUCT-Robotics & IoT Community</span>
             </div>
             <p className="footer-description">
-              A community of innovators, builders, and dreamers pushing the boundaries of technology.
-              Focusing on smart automation, embedded systems, and autonomous robotics.
+              
             </p>
           </div>
 

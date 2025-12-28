@@ -1,6 +1,10 @@
 .posts-wrapper {
-  padding: 5rem 1rem;
+  padding: 3rem 1rem; /* Reduced top padding for mobile */
   min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .posts-wrapper { padding: 5rem 1rem; }
 }
 
 .posts-container {
@@ -11,19 +15,21 @@
 /* Header & Tabs */
 .posts-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .main-title {
-  font-size: 2.5rem;
+  /* clamp(min, preferred, max) prevents title from breaking on small screens */
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
   font-weight: 700;
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .tab-container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .tab-box {
@@ -32,10 +38,16 @@
   border-radius: 0.75rem;
   display: inline-flex;
   border: 1px solid #1f2937;
+  /* Allows tabs to scroll horizontally if screen is too narrow */
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none; 
 }
 
+.tab-box::-webkit-scrollbar { display: none; }
+
 .tab-btn {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.25rem; /* Slightly reduced padding for mobile */
   border-radius: 0.5rem;
   font-weight: 700;
   border: none;
@@ -43,10 +55,11 @@
   color: #9ca3af;
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap; /* Prevents text from wrapping inside the button */
 }
 
-.tab-btn:hover {
-  color: white;
+@media (min-width: 768px) {
+  .tab-btn { padding: 0.5rem 2rem; }
 }
 
 .tab-btn.active {
@@ -58,15 +71,18 @@
 .posts-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Tighter gap on mobile */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .posts-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {
-  .posts-grid { grid-template-columns: repeat(3, 1fr); }
+  .posts-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+  }
 }
 
 /* AI Panel */
@@ -75,54 +91,36 @@
   margin: 0 auto;
   background-color: #111;
   border: 1px solid rgba(0, 255, 102, 0.2);
-  padding: 2rem;
-  border-radius: 1.5rem;
+  padding: 1.5rem; /* Reduced padding for mobile */
+  border-radius: 1.25rem;
 }
 
-.ai-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #00ff66;
-  border-radius: 9999px;
-  margin-right: 0.75rem;
-  animation: pulse 2s infinite;
-}
-
-.ai-note {
-  color: #9ca3af;
-  font-size: 0.875rem;
-  margin-bottom: 1.5rem;
+@media (min-width: 768px) {
+  .ai-panel { padding: 2rem; border-radius: 1.5rem; }
 }
 
 .input-row {
   display: flex;
+  flex-direction: column; /* Stack input and button on mobile */
   gap: 1rem;
 }
 
+@media (min-width: 480px) {
+  .input-row { flex-direction: row; } /* Side-by-side on larger phones/tablets */
+}
+
 .ai-input {
-  flex: 1;
+  width: 100%;
   background-color: black;
   border: 1px solid #1f2937;
   color: white;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-}
-
-.ai-input:focus {
-  outline: none;
-  border-color: #00ff66;
+  font-size: 16px; /* Prevents iOS from zooming in on focus */
 }
 
 .gen-btn {
+  width: 100%; /* Full width on mobile stacking */
   background-color: #00ff66;
   color: black;
   padding: 0.75rem 1.5rem;
@@ -130,37 +128,25 @@
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
-.gen-btn:disabled {
-  opacity: 0.5;
+@media (min-width: 480px) {
+  .gen-btn { width: auto; } /* Returns to natural width on larger screens */
 }
 
-.ai-result {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid #1f2937;
-  animation: fadeIn 0.5s ease;
-}
-
+/* AI Result & Response Box */
 .response-box {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0.75rem;
   border: 1px solid #1f2937;
   color: #d1d5db;
   font-family: monospace;
-  font-size: 0.875rem;
-  white-space: pre-line;
+  font-size: 0.8125rem; /* Slightly smaller for mobile code/text views */
+  overflow-x: auto; /* Handle long code lines */
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (min-width: 768px) {
+  .response-box { padding: 1.5rem; font-size: 0.875rem; }
 }

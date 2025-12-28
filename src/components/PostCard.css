@@ -6,130 +6,146 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensures all cards in a row match height */
+  height: 100%;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.post-card:hover {
-  transform: translateY(-5px);
-  border-color: #00ff66;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+/* Disable hover lift on touch devices to prevent "double tap" issues */
+@media (hover: hover) {
+  .post-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ff66;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 }
 
-/* 1. Image Fix: Prevents "Large" vertical expansion */
+/* 1. Image Fix: Fluid height for mobile */
 .post-image-container {
   position: relative;
   width: 100%;
-  height: 200px; /* Fixed height for all images */
+  /* Slightly shorter on mobile so the text isn't pushed too far down */
+  height: clamp(160px, 25vh, 200px); 
   overflow: hidden;
 }
 
 .post-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crops image to fit without stretching */
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.post-card:hover .post-image {
-  transform: scale(1.1);
+/* Prevent zoom animation on touch to keep it clean */
+@media (hover: hover) {
+  .post-card:hover .post-image {
+    transform: scale(1.1);
+  }
 }
 
 /* Badge Positioning */
 .post-badge-pos {
+  background-color: violet;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.75rem; /* Tighter for mobile */
+  left: 0.75rem;
   z-index: 2;
+  
 }
 
 .post-badge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 99px;
-  font-size: 0.75rem;
+  font-size: 0.7rem; /* Slightly smaller for mobile */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* Category Colors */
-.cat-innovation { background: #00ff66; color: #000; }
-.cat-community { background: #22d3ee; color: #000; }
-.cat-news { background: #8b5cf6; color: #fff; }
-.cat-default { background: #374151; color: #fff; }
-
 /* Content Area */
 .post-content {
-  padding: 1.5rem;
+  padding: 1.25rem; /* Reduced padding on mobile */
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Pushes button to the bottom */
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .post-content {
+    padding: 1.5rem;
+  }
 }
 
 .post-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #6b7280;
   margin-bottom: 0.75rem;
 }
 
-/* 2. Text Fix: Prevents wide text lines */
+/* 2. Text Fix: Better line-clamping for small screens */
 .post-title {
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1.125rem; /* Smaller for mobile headlines */
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.4;
-  /* Truncate long titles to 2 lines */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+@media (min-width: 768px) {
+  .post-title {
+    font-size: 1.25rem;
+  }
+}
+
 .post-excerpt {
   color: #9ca3af;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  /* Truncate long content to 3 lines */
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  /* Allow 2 lines on mobile, 3 on desktop to keep cards compact */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .post-excerpt {
+    -webkit-line-clamp: 3;
+  }
 }
 
 .post-source {
   font-size: 0.75rem;
   color: #4b5563;
-  margin-bottom: 1.5rem;
-  margin-top: auto; /* Sticks source/button to bottom */
+  margin-bottom: 1.25rem;
+  margin-top: auto;
 }
 
-.source-italic {
-  font-style: italic;
-  color: #6b7280;
-}
-
-/* Button Styles */
+/* Button Styles: Optimized for thumb-tapping */
 .read-more-btn {
   background: transparent;
   border: none;
   color: #00ff66;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  padding: 0;
+  padding: 0.5rem 0; /* Vertical hit area for fingers */
   transition: gap 0.2s;
 }
 
-.read-more-btn:hover {
-  gap: 0.75rem;
+/* Visual cue for mobile interaction */
+.read-more-btn:active {
+  opacity: 0.7;
 }
 
 .arrow-icon {

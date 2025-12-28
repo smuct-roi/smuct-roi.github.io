@@ -2,7 +2,14 @@
   background-color: #000;
   color: #fff;
   min-height: 100vh;
-  padding: 4rem 1rem;
+  /* Reduced padding for mobile, increased for desktop */
+  padding: 2.5rem 1.25rem; 
+}
+
+@media (min-width: 768px) {
+  .members-wrapper {
+    padding: 4rem 1rem;
+  }
 }
 
 .members-container {
@@ -12,11 +19,18 @@
 
 .members-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .members-header {
+    margin-bottom: 4rem;
+  }
 }
 
 .members-title {
-  font-size: 3rem;
+  /* clamp ensures font shrinks on small phones but grows to 3rem on desktop */
+  font-size: clamp(2rem, 8vw, 3rem);
   color: #00ff66;
   text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
   margin-bottom: 1rem;
@@ -24,29 +38,49 @@
 
 .members-subtitle {
   color: #9ca3af;
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 3vw, 1.125rem);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .members-section {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .members-section-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Slightly smaller for mobile */
   border-left: 4px solid #00ff66;
   padding-left: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.members-grid {
-  display: grid;
-  gap: 2rem;
+@media (min-width: 768px) {
+  .members-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
-.members-grid-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.members-grid-4 { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.members-grid {
+  display: grid;
+  gap: 1.5rem; /* Tighter gap for mobile */
+}
+
+/* Grids: On very small screens, minmax will naturally force 1 column */
+.members-grid-3 { 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+}
+.members-grid-4 { 
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+}
+
+@media (min-width: 768px) {
+  .members-grid {
+    gap: 2rem;
+  }
+}
 
 /* Card Styles */
 .member-card {
@@ -57,14 +91,24 @@
   transition: transform 0.3s, border-color 0.3s;
 }
 
-.member-card:hover {
-  transform: translateY(-5px);
-  border-color: #00ff66;
+/* Disable hover transform on touch devices to avoid "stuck" states */
+@media (hover: hover) {
+  .member-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ff66;
+  }
 }
 
 .member-avatar-wrapper {
   position: relative;
-  height: 250px;
+  /* Height is slightly shorter on mobile to avoid giant images */
+  height: 200px; 
+}
+
+@media (min-width: 480px) {
+  .member-avatar-wrapper {
+    height: 250px;
+  }
 }
 
 .member-avatar {
@@ -73,56 +117,33 @@
   object-fit: cover;
 }
 
-.member-dept-tag {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: #00ff66;
-  color: #000;
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  border-radius: 4px;
-}
-
+/* Info section adjustments */
 .member-info {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
-.member-name {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
+@media (min-width: 768px) {
+  .member-info {
+    padding: 1.5rem;
+  }
 }
 
-.member-role {
-  color: #00ff66;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
+/* Ensure long text doesn't break the container */
 .member-bio {
   color: #9ca3af;
   font-size: 0.85rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+  word-wrap: break-word;
 }
 
 .member-socials {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem; /* Larger gap for easier tapping on mobile */
 }
 
-.member-link {
-  color: #6b7280;
-  transition: color 0.2s;
-}
-
-.member-link:hover {
-  color: #00ff66;
-}
-
+/* Ensure icons are a good size for touch */
 .member-svg-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
