@@ -32,7 +32,7 @@ export const posts = [
     author: 'SMUCT IoT Community',
     category: PostCategory.COMMUNITY,
     content: '',
-    image: '/postimages/p3.jpeg',
+    image: '/postimages/p3.png',
     source: 'smuct-roi.github.io'
   }
 

@@ -3,7 +3,7 @@
   padding-bottom: 8rem; /* pb-32 */
   background-color: #ebebeb;
   overflow-x: hidden;
-  padding: 20px;
+  padding: 25px;
 }
 
 /* --- Hero Section --- */
@@ -174,7 +174,7 @@
   font-weight: 900;
   letter-spacing: -0.05em;
   margin-bottom: 0.5rem;
-  color: #0018f4; /* Default indigo-400 */
+  color: #001aff; /* Default indigo-400 */
 }
 
 /* Adding variety to colors like the JSX */
@@ -193,9 +193,6 @@
 /* --- Sections Shared Styles --- */
 .feed-section, .projects-section {
   padding: 8rem 0;
-  border: #000000;
-  border: radius 1px;;
-
 }
 
 .feed-section { background-color: rgba(248, 250, 252, 0.5); }
@@ -219,45 +216,38 @@
 
 /* --- Search Box --- */
 .search-box {
-  
   position: relative;
   width: 100%;
   max-width: 450px;
-  /* Text styling */
-  color: #000000; /* Set text color to black */
-  font-size: 1rem;
-  font-weight: 500;
-  outline: none;
-  transition: all 0.3s ease;
 }
 
 .search-input {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid #000000;
+  background: #fff;
+  border: 1px solid #e2e8f0;
   padding: 1.25rem 2rem;
   border-radius: 1.5rem;
-
-  /* Font Styling */
-  color: #000000;      /* Forces typed text to be black */
+  
+  /* Text Styling */
+  color: #000000;         /* Set typed text to black */
   font-weight: 700;
   font-size: 0.875rem;
+  
   transition: all 0.3s ease;
-  outline: none;       /* Removes the default browser blue outline */
 }
 
-/* Optional: Ensure the placeholder is visible but slightly dimmer than typed text */
+/* Optional: styling the placeholder text specifically */
 .search-input::placeholder {
-  color: #64748b;
+  color: #64748b;        /* Keeps the hint text a readable grey */
   font-weight: 500;
 }
 
-/* Optional: Indigo focus effect to match your buttons */
 .search-input:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  color: #000000;         /* Ensures text stays black on focus */
 }
-
 .search-icon {
   position: absolute;
   right: 1.5rem;

@@ -19,9 +19,9 @@ const Home = () => {
 
   const stats = [
     { label: 'Completed Projects', value: '25+' },
-    { label: 'Active Members', value: '120+' },
-    { label: 'Innovation Awards', value: '12' },
-    { label: 'Years of Growth', value: '03' }
+    { label: 'Active Members', value: '20+' },
+    { label: 'Innovation Awards', value: '1' },
+    { label: 'Years of Growth', value: '02' }
   ];
 
   return (
