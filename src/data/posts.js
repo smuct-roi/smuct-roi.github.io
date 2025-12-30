@@ -33,7 +33,7 @@ export const posts = [
     category: PostCategory.COMMUNITY,
     content: '',
     image: '/postimages/p3.jpeg',
-    source: 'https://smuct-roi.github.io/'
+    source: 'smuct-roi.github.io'
   }
 
 ];
