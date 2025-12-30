@@ -3,7 +3,8 @@
   padding-bottom: 8rem; /* pb-32 */
   background-color: #ebebeb;
   overflow-x: hidden;
-  padding: 25px;
+  padding: auto;
+
 }
 
 /* --- Hero Section --- */
