@@ -37,10 +37,7 @@ const About = () => {
                 alt="Innovation Hub" 
                 className="image"
               />
-              <div className="overlay">
-                <div className="pulse"></div>
-                <div className="badge">SMUCT</div>
-              </div>
+             
             </div>
           </div>
         </div>

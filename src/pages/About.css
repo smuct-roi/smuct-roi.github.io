@@ -60,12 +60,12 @@ body {
 /* --- Visual Image Box --- */
 .image-box {
  
-  background: #ffffff;
+  background: transparent;
   border-radius: .5rem;
-  border: 1px solid #d1d5db;
+
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  
 }
 
 .image {
@@ -73,6 +73,7 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s ease;
+  background: transparent;
 }
 
 .image-box:hover .image {
