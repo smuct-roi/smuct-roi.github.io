@@ -1,12 +1,23 @@
 /* --- Wrapper --- */
 .wrapper {
   background-color: #ebebeb;
-  min-height: 100vh; /* Covers the full height of the screen */
+  min-height: 100vh;
   width: 100%;
-  padding-top: 4rem; /* Adds space so content doesn't touch the sticky navbar */
+
+  /* Space for sticky navbar */
+  padding-top: 100px;
   padding-bottom: 5rem;
+
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevents side-scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ FIXED: allow sticky to work */
+html,
+body {
+  height: auto;
+  /* overflow-x: hidden; ❌ REMOVED (was breaking sticky) */
 }
 
 .container {
@@ -48,7 +59,7 @@
 
 /* --- Visual Image Box --- */
 .image-box {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   background: #ffffff;
   border-radius: 2.5rem;
   border: 1px solid #d1d5db;
@@ -104,7 +115,7 @@
 .number {
   font-size: 3rem;
   font-weight: 900;
-  color: #e2e8f0; /* Subtle numbering */
+  color: #000000;
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -133,5 +144,9 @@
 }
 
 @keyframes ping {
-  75%, 100% { transform: scale(2); opacity: 0; }
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }

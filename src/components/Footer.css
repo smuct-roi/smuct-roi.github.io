@@ -85,7 +85,7 @@
 }
 
 .footer-link:hover {
-  color: #00ff66; /* Neon green hover */
+  color: #1870f5; /* Neon green hover */
   transform: translateX(5px);
 }
 
@@ -114,7 +114,7 @@
 
 .footer-tagline {
   margin: 0;
-  color: #4f46e5; /* Indigo brand accent */
+  color: #ffffff; /* Indigo brand accent */
 }
 
 /* --- Mobile Responsiveness --- */
@@ -152,4 +152,37 @@
   .footer-link:hover {
     transform: translateY(-3px); /* Move up instead of right on mobile */
   }
+}
+/* Container for the PNGs */
+.footer-brand-images {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem; /* Space below the SMUCT title */
+  align-items: center;
+}
+
+/* Individual Circular Image Styling */
+.footer-png {
+  width: 60px;               /* Fixed width */
+  height: 60px;              /* Fixed height (must match width) */
+  border-radius: 50%;        /* Makes it a perfect circle */
+  object-fit: cover;         /* Ensures image fills the circle without stretching */
+  background-color: #ffffff; /* Adds a white background behind the PNG */
+  border: 2px solid #d1d5db; /* Subtle light grey border */
+  padding: 5px;              /* Space between border and image */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.footer-png:hover {
+  transform: scale(1.1) translateY(-3px);
+  border-color: #4f46e5;     /* Border turns Indigo on hover */
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+}
+
+/* Ensure the brand section doesn't squish them */
+.footer-brand-section {
+  display: flex;
+  flex-direction: column;
 }

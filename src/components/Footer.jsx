@@ -11,11 +11,17 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand-section">
             <div className="footer-logo-wrapper">
-              
               <span className="footer-logo-text">SMUCT-Robotics & IoT Community</span>
             </div>
+            
+            {/* Added PNG Section */}
+            <div className="footer-brand-images">
+              <img src="public/logo/SMUCT-logo.png" alt="SMUCT" className="footer-png" />
+              <img src="public/logo/logo2.png" alt="SMUCT-RoI" className="footer-png" />
+            </div>
+
             <p className="footer-description">
-              
+              {/* Description text if needed */}
             </p>
           </div>
 
@@ -25,8 +31,6 @@ const Footer = () => {
             <ul className="footer-links-list">
               <li><Link to="/projects" className="footer-link">Browse Projects</Link></li>
               <li><Link to="/members" className="footer-link">Our Team</Link></li>
-              <li><Link to="/apply" className="footer-link">Join Us</Link></li>
-              <li><Link to="/admin" className="footer-link">Admin Portal</Link></li>
             </ul>
           </div>
 
@@ -34,17 +38,18 @@ const Footer = () => {
           <div className="footer-links-column">
             <h3 className="footer-heading">Follow Us</h3>
             <div className="footer-social-flex">
-              <a href="#" className="footer-link">GitHub</a>
+              <a href="https://github.com/smuct-roi" className="footer-link">GitHub</a>
               <a href="#" className="footer-link">LinkedIn</a>
               <a href="#" className="footer-link">Discord</a>
+              <a href="https://www.facebook.com/share/1DEvs5XabH/" className="footer-link">FaceBook</a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
-          <p className="footer-copy">&copy; {new Date().getFullYear()} Robotics & IoT Committee. All rights reserved.</p>
-          <p className="footer-tagline">Designed for SMUCT Innovation Hub</p>
+          <p className="footer-copy">&copy; {new Date().getFullYear()} SMUCT Robotics & IoT Committee. All rights reserved.</p>
+          <p className="footer-tagline">Designed for SMUCT-RoI</p>
         </div>
       </div>
     </footer>

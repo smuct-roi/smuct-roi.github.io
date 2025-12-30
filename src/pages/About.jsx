@@ -4,7 +4,7 @@ import './About.css';
 const About = () => {
   const coreValues = [
     { title: 'Open Innovation', desc: 'Every idea counts. We operate on the principle of open-source knowledge sharing.' },
-    { title: 'Collaboration', desc: 'Robotics is multidisciplinary. We unite CSE, EEE, and Mechanical students.' },
+    { title: 'Collaboration', desc: 'Robotics is multidisciplinary. We unite CSE and EEE.' },
     { title: 'Impact', desc: 'We build for the real world. Every project must aim to solve a tangible problem.' }
   ];
 

@@ -1,7 +1,15 @@
 /* --- Navbar Container (Sticky Logic) --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .navbar-root {
   position: sticky;
   top: 0;
+  z-index: 1000;
+
   width: 100%;
   z-index: 1000; /* Keeps it above the Apply card and other content */
   background-color: rgba(235, 235, 235, 0.85); /* Matches your #ebebeb grey */

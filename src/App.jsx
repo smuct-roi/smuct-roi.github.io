@@ -17,10 +17,13 @@ import Apply from './pages/Apply';
 
 import './App.css'; 
 
+/**
+ * ScrollToTop ensures the window resets to (0,0) whenever
+ * the user changes the URL path.
+ */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    // Reset scroll to top on every route change
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
@@ -30,8 +33,13 @@ const App = () => {
   return (
     <HashRouter>
       <ScrollToTop />
+      
+      {/* app-wrapper: Uses min-height: 100vh and display: flex 
+          to keep the footer at the bottom. 
+      */}
       <div className="app-wrapper">
-        {/* Navbar usually has navbar-root class inside its own file */}
+        
+        {/* Navbar: Set to position: sticky in CSS */}
         <Navbar />
         
         <main className="main-content">
@@ -44,8 +52,9 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />
-             
-              {/* Catch-all route */}
+              <Route path="/apply" element={<Apply />} />
+              
+              {/* Fallback for undefined routes */}
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>
