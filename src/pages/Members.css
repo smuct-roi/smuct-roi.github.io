@@ -1,149 +1,214 @@
+/* --- Root & Container --- */
 .members-wrapper {
-  background-color: #000;
-  color: #fff;
+  background-color: #ebebeb;
   min-height: 100vh;
-  /* Reduced padding for mobile, increased for desktop */
-  padding: 2.5rem 1.25rem; 
-}
-
-@media (min-width: 768px) {
-  .members-wrapper {
-    padding: 4rem 1rem;
-  }
+  padding: 80px 0;
 }
 
 .members-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* --- Header Styling --- */
 .members-header {
   text-align: center;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-  .members-header {
-    margin-bottom: 4rem;
-  }
+  margin-bottom: 80px;
 }
 
 .members-title {
-  /* clamp ensures font shrinks on small phones but grows to 3rem on desktop */
-  font-size: clamp(2rem, 8vw, 3rem);
-  color: #00ff66;
-  text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.05em;
+  margin-bottom: 16px;
 }
 
 .members-subtitle {
-  color: #9ca3af;
-  font-size: clamp(0.95rem, 3vw, 1.125rem);
+  color: #64748b;
+  font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
+/* --- Section Headers --- */
 .members-section {
-  margin-bottom: 4rem;
+  margin-bottom: 100px;
 }
 
 .members-section-title {
-  font-size: 1.25rem; /* Slightly smaller for mobile */
-  border-left: 4px solid #00ff66;
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.4em;
+  color: #6366f1; /* Indigo accent */
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .members-section-title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
+.members-section-title::after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background: #f1f5f9;
+  margin-left: 20px;
 }
 
-.members-grid {
-  display: grid;
-  gap: 1.5rem; /* Tighter gap for mobile */
-}
-
-/* Grids: On very small screens, minmax will naturally force 1 column */
-.members-grid-3 { 
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-}
-.members-grid-4 { 
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-}
-
-@media (min-width: 768px) {
-  .members-grid {
-    gap: 2rem;
-  }
-}
-
-/* Card Styles */
+/* --- Member Card --- */
 .member-card {
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 48px; /* Extra rounded for Prism style */
+  padding: 40px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-/* Disable hover transform on touch devices to avoid "stuck" states */
-@media (hover: hover) {
-  .member-card:hover {
-    transform: translateY(-5px);
-    border-color: #00ff66;
-  }
+.member-card:hover {
+  transform: translateY(-10px);
+  border-color: #e0e7ff;
+  box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.12);
 }
 
+/* --- Avatar & Tag --- */
 .member-avatar-wrapper {
   position: relative;
-  /* Height is slightly shorter on mobile to avoid giant images */
-  height: 200px; 
-}
-
-@media (min-width: 480px) {
-  .member-avatar-wrapper {
-    height: 250px;
-  }
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 32px;
 }
 
 .member-avatar {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
 }
 
-/* Info section adjustments */
-.member-info {
-  padding: 1.25rem;
+.member-card:hover .member-avatar {
+  transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
-  .member-info {
-    padding: 1.5rem;
+.member-dept-tag {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+/* --- Info --- */
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.member-role {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #6366f1;
+  background: #eef2ff;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+
+.member-bio {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits bio to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Socials --- */
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid #f8fafc;
+}
+
+.member-link {
+  color: #cbd5e1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.member-link:hover {
+  color: #6366f1;
+  transform: scale(1.1);
+}
+
+.member-svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Responsive Grids --- */
+.members-grid {
+  display: grid;
+  gap: 32px;
+}
+
+/* Default Mobile: 1 Column */
+.members-grid-3, .members-grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 640px) {
+  .members-grid-3, .members-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Ensure long text doesn't break the container */
-.member-bio {
-  color: #9ca3af;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-  word-wrap: break-word;
+/* Desktop: 3 and 4 Columns */
+@media (min-width: 1024px) {
+  .members-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .members-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .members-title {
+    font-size: 4.5rem;
+  }
 }
 
-.member-socials {
-  display: flex;
-  gap: 1.25rem; /* Larger gap for easier tapping on mobile */
-}
-
-/* Ensure icons are a good size for touch */
-.member-svg-icon {
-  width: 22px;
-  height: 22px;
+/* Extra small mobile adjustments */
+@media (max-width: 480px) {
+  .member-card {
+    padding: 30px 20px;
+  }
+  .member-avatar-wrapper {
+    width: 130px;
+    height: 130px;
+  }
 }

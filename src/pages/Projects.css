@@ -1,64 +1,49 @@
+/* --- Page Wrapper --- */
 .projects-page {
-  padding-top: 3rem; /* Reduced for mobile */
-  padding-bottom: 5rem;
+  padding: 5rem 0; /* py-20 */
   min-height: 100vh;
-  background-color: black;
-}
-
-@media (min-width: 768px) {
-  .projects-page {
-    padding-top: 5rem; /* Original padding for desktop */
-  }
+  background-color: #ebebeb;
 }
 
 .content-container {
-  max-width: 80rem;
+  max-width: 80rem; /* max-w-7xl */
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Header Section */
-.page-header {
-  margin-bottom: 2rem; /* Tighter for mobile */
-}
+@media (min-width: 640px) { .content-container { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .content-container { padding: 0 2rem; } }
 
-@media (min-width: 768px) {
-  .page-header {
-    margin-bottom: 3rem;
-  }
+/* --- Header Section --- */
+.page-header {
+  margin-bottom: 3rem; /* mb-12 */
 }
 
 .page-title {
-  /* clamp ensures font is 1.75rem on tiny screens and 2.25rem on large screens */
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
-  font-weight: 700;
-  color: white;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 800;
+  color: #000000;
   margin-bottom: 1rem;
+  letter-spacing: -0.025em;
 }
 
 .page-lead {
-  margin: auto;
-  color: #9ca3af;
-  max-width: 42rem;
+  color: #000000; /* gray-400 */
+  max-width: 42rem; /* max-w-2xl */
   line-height: 1.6;
-  font-size: 0.95rem; /* Slightly smaller for mobile readability */
+  font-size: 1.125rem;
 }
 
-@media (min-width: 768px) {
-  .page-lead {
-    font-size: 1rem;
-  }
-}
-
-/* Filter Navigation */
+/* --- Filter Bar --- */
 .filter-bar {
   display: flex;
-  gap: 0.75rem; /* Slightly tighter gap for mobile */
+  gap: 1rem;
   margin-bottom: 2.5rem;
   overflow-x: auto;
   padding-bottom: 1rem;
-  scrollbar-width: none; 
-  -webkit-overflow-scrolling: touch; /* Ensures smooth momentum scroll on iPhones */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .filter-bar::-webkit-scrollbar {
@@ -66,67 +51,75 @@
 }
 
 .filter-pill {
-  padding: 0.5rem 1.25rem; /* Slightly smaller padding for mobile */
+  padding: 0.5rem 1.5rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 700;
-  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
   border: 1px solid transparent;
 }
 
-@media (min-width: 768px) {
-  .filter-pill {
-    padding: 0.5rem 1.5rem;
-  }
-}
-
 .filter-pill.active {
-  background-color: #00ff66;
-  color: black;
-  box-shadow: 0 10px 15px -3px rgba(0, 255, 102, 0.2);
+  background-color: #7e86fd;
+  text-emphasis-color: white;
+  color: #000000;
+  box-shadow: 0 10px 15px -3px rgba(0, 255, 102, 0.25);
 }
 
 .filter-pill.inactive {
-  background-color: #111827;
-  color: #9ca3af;
-  border-color: #1f2937;
+  background-color: #111827; /* gray-900 */
+  color: #94a3b8;
+  border-color: #1f2937; /* gray-800 */
 }
 
 .filter-pill.inactive:hover {
-  color: white;
+  color: #ffffff;
   border-color: #374151;
 }
 
-/* Responsive Grid */
+/* --- Projects Grid --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Tighter gap on mobile */
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem; /* gap-8 */
 }
 
-@media (min-width: 640px) { /* Added a small tablet/large phone breakpoint */
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Responsive Grid Breakpoints */
 @media (min-width: 768px) {
   .projects-grid {
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+/* --- Empty State --- */
 .empty-state {
   text-align: center;
   padding: 5rem 0;
-  color: #4b5563;
-  font-style: italic;
+  color: #64748b;
+  font-weight: 600;
+  border: 2px dashed #1f2937;
+  border-radius: 24px;
+  margin-top: 2rem;
+}
+
+/* --- Mobile Specific Adjustments --- */
+@media (max-width: 640px) {
+  .page-title {
+    font-size: 1.875rem;
+  }
+  
+  .filter-bar {
+    /* Allow slight padding on the left to show it's scrollable */
+    margin-left: -1rem;
+    padding-left: 1rem;
+    width: calc(100% + 1rem);
+  }
 }

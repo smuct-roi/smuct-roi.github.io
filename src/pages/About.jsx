@@ -24,14 +24,8 @@ const About = () => {
             </p>
             
             <div className="features">
-              <div className="feature-card">
-                <h3 className="feature-title">Research</h3>
-                <p className="feature-text">Pushing boundaries in low-power communication and sensor fusion.</p>
-              </div>
-              <div className="feature-card">
-                <h3 className="feature-title">Education</h3>
-                <p className="feature-text">Regular workshops on ROS, Embedded C, and 3D prototyping.</p>
-              </div>
+              
+             
             </div>
           </div>
 

@@ -1,165 +1,123 @@
-/* Page Layout */
-.apply-page {
-  /* Reduced top padding for mobile to get to the form faster */
-  padding: 3rem 1.25rem; 
+/* --- Background & Full Page Wrapper --- */
+.apply-page-wrapper {
+  background-color: #ebebeb; /* Same as Home/Contact */
+  width: 100%;
+  min-height: 100vh; /* Forces it to fill the whole screen */
+  margin: 0;
+  padding: 80px 20px; /* Safe space for Navbar and Footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontal centering */
+  justify-content: flex-start; /* Vertical starting point (prevents top-cropping) */
+  box-sizing: border-box; /* Crucial to prevent side-overflow */
+  overflow-x: hidden;
 }
 
-@media (min-width: 768px) {
-  .apply-page { padding: 5rem 1rem; }
-}
-
-.form-card {
-  max-width: 48rem;
+/* --- Centered Content Container --- */
+.apply-inner-container {
+  width: 100%;
+  max-width: 1200px; /* Standard wide container */
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  background-color: #111;
-  border: 1px solid #1f2937;
-  padding: 1.5rem; /* Reduced padding for mobile */
-  border-radius: 1.25rem; /* Slightly softer corners for mobile */
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 768px) {
-  .form-card { 
-    padding: 3rem; 
-    border-radius: 1.5rem;
-  }
-}
-
-/* Header */
-.form-header {
-  margin-bottom: 2rem;
-}
-
-.form-title {
-  /* clamp scales font smoothly between 1.5rem and 1.875rem */
-  font-size: clamp(1.5rem, 5vw, 1.875rem);
-  font-weight: 700;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.form-subtitle {
-  color: #6b7280;
-  font-size: 0.9375rem;
-}
-
-/* Form Styling */
-.apply-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem; /* Slightly tighter gap on mobile */
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .form-row { 
-    grid-template-columns: 1fr 1fr; 
-    gap: 1.5rem;
-  }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.label {
-  display: block;
-  color: #9ca3af;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.input {
+/* --- The Main Card --- */
+.apply-content-card {
+  background: #ffffff;
   width: 100%;
-  background-color: black;
-  border: 1px solid #1f2937;
-  color: white;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  transition: border-color 0.2s;
-  /* Crucial: 16px font prevents auto-zoom on iOS */
-  font-size: 1rem; 
-}
-
-.input:focus {
-  border-color: #00ff66;
-  outline: none;
-}
-
-/* Submit Button */
-.submit-container {
-  padding-top: 1rem;
-}
-
-.submit-btn {
-  width: 100%;
-  background-color: #00ff66;
-  color: black;
-  font-weight: 700;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  box-shadow: 0 10px 15px -3px rgba(0, 255, 102, 0.3);
-  /* Ensure a large enough touch target */
-  min-height: 3.5rem;
-}
-
-/* Disable hover lift on mobile to prevent "stuck" states */
-@media (hover: hover) {
-  .submit-btn:hover {
-    background-color: #00cc55;
-    transform: translateY(-1px);
-  }
-}
-
-/* Success State */
-.success-wrapper {
-  padding: 6rem 1.25rem; /* Reduced vertical padding for mobile */
+  max-width: 500px; /* Keeps card neat on desktop */
+  padding: 3.5rem 2.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   text-align: center;
-  max-width: 42rem;
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  .success-wrapper { padding: 10rem 1rem; }
-}
-
-.success-icon {
-  width: 4rem;
-  height: 4rem;
-  background-color: rgba(0, 255, 102, 0.2);
-  color: #00ff66;
-  border-radius: 9999px;
+/* --- Elements Styling --- */
+.apply-icon-circle {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #4f46e5; /* Your Indigo Theme */
+  color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;
+  box-shadow: 0 10px 15px rgba(79, 70, 229, 0.3);
 }
 
-@media (min-width: 768px) {
-  .success-icon { width: 5rem; height: 5rem; }
-}
-
-.success-title {
-  font-size: clamp(1.5rem, 5vw, 1.875rem);
-  font-weight: 700;
-  color: white;
+.apply-main-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #0f172a;
   margin-bottom: 1rem;
+  letter-spacing: -0.05em;
 }
 
-.success-text {
-  color: #9ca3af;
-  margin-bottom: 2rem;
+.apply-description-text {
+  color: #475569;
+  font-size: 1.15rem;
   line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.apply-info-panel {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.apply-panel-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.apply-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.apply-action-btn {
+  display: block;
+  width: 100%;
+  background-color: #4f46e5;
+  color: white !important;
+  text-decoration: none;
+  padding: 1.25rem;
+  border-radius: 1.125rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.apply-action-btn:hover {
+  background-color: #4338ca;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 640px) {
+  .apply-page-wrapper {
+    padding: 60px 15px; /* Less side-padding on phones */
+  }
+  
+  .apply-content-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 2rem;
+  }
 }

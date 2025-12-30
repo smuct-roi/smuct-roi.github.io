@@ -37,7 +37,7 @@ const Contact = () => {
               </div>
               <div className="text-box">
                 <h4 className="detail-label">Our Location</h4>
-                <p className="detail-value">SMUCT Innovation Lab, Building 3, Room 402</p>
+                <p className="detail-value">5th floor room-1506,SMUCT,Uttara sector-17,Dhaka</p>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
               </div>
               <div className="text-box">
                 <h4 className="detail-label">Email Us</h4>
-                <p className="detail-value">iot-committee@smuct.edu.bd</p>
+                <p className="detail-value">smuctroboticsandiotcommunity@gmail.com</p>
               </div>
             </div>
           </div>

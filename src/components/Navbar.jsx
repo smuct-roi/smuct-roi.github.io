@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'Posts', path: '/posts' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Apply', path: '/apply' },
+  
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -31,7 +31,7 @@ const Navbar = () => {
                 alt="SMUCT Robotics & IoT Logo"
                 className="logo-image"
               />
-              <span className="logo-text">SMUCT Robotics & IoT</span>
+              <span className="logo-text"></span>
             </Link>
           </div>
 

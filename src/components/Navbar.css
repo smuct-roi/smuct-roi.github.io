@@ -1,102 +1,93 @@
-/* Navbar Root */
+/* --- Navbar Container (Sticky Logic) --- */
 .navbar-root {
-  background-color: black;
-  border-bottom: 1px solid rgba(0, 255, 102, 0.3);
   position: sticky;
   top: 0;
-  z-index: 100; /* Increased to ensure it stays above all content */
-  backdrop-filter: blur(12px);
-  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  z-index: 1000; /* Keeps it above the Apply card and other content */
+  background-color: rgba(235, 235, 235, 0.85); /* Matches your #ebebeb grey */
+  backdrop-filter: blur(12px); /* Modern glassmorphism blur */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .navbar-container {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .navbar-flex {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 4.5rem; /* Slightly taller for better touch targets */
-}
-
-/* Logo Styles */
-.navbar-logo-link {
-  display: flex;
   align-items: center;
-  text-decoration: none;
-  flex-shrink: 0; /* Prevents logo from squishing */
+  height: 80px; /* Standard header height */
 }
 
+/* --- Logo Styling --- */
 .logo-image {
-  /* Responsive Logo Size */
-  width: clamp(100px, 20vw, 150px); 
-  height: auto;
-  max-height: 60px;
-  object-fit: contain;
-  margin-right: 8px;
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  .logo-image {
-    width: 150px;
-    max-height: 80px;
-    margin-right: 12px;
-  }
+.logo-image:hover {
+  transform: scale(1.05);
 }
 
-/* Desktop Navigation */
+/* --- Desktop Links --- */
 .desktop-nav {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .desktop-nav {
     display: block;
   }
 }
 
 .desktop-links-wrapper {
-  margin-left: 2rem;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 2.5rem;
 }
 
 .nav-link {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  white-space: nowrap;
-}
-
-.nav-active {
-  color: #00ff66;
-  background-color: rgba(0, 255, 102, 0.1);
-  text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .nav-inactive {
-  color: #d1d5db;
+  color: #475569; /* Slate-600 */
 }
 
 .nav-inactive:hover {
-  color: #00ff66;
-  background-color: rgba(0, 255, 102, 0.05);
+  color: #4f46e5; /* Indigo-600 */
 }
 
-/* Mobile Controls */
+.nav-active {
+  color: #4f46e5;
+  position: relative;
+}
+
+/* Small underline for active link */
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4f46e5;
+  border-radius: 2px;
+}
+
+/* --- Mobile Menu & Toggle --- */
 .mobile-toggle {
-  display: flex;
-  align-items: center;
+  display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mobile-toggle {
     display: none;
   }
@@ -105,16 +96,9 @@
 .toggle-button {
   background: none;
   border: none;
-  padding: 0.6rem;
-  border-radius: 0.375rem;
-  color: #00ff66;
+  color: #0f172a;
   cursor: pointer;
-  display: flex;
-  transition: background 0.2s;
-}
-
-.toggle-button:active {
-  background-color: rgba(0, 255, 102, 0.2);
+  padding: 0.5rem;
 }
 
 .toggle-icon {
@@ -122,44 +106,32 @@
   height: 1.75rem;
 }
 
-/* Mobile Menu Overlay */
 .mobile-menu {
-  background-color: rgba(0, 0, 0, 0.98);
-  border-bottom: 1px solid rgba(0, 255, 102, 0.3);
   position: absolute;
-  top: 100%;
+  top: 80px;
   left: 0;
-  right: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-
-.mobile-links-wrapper {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
 }
 
 .mobile-link {
   display: block;
-  padding: 0.875rem 1rem; /* Larger tap target for fingers */
-  border-radius: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 500;
+  padding: 1rem 1.5rem;
   text-decoration: none;
-  transition: background 0.2s;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .mobile-active {
-  color: #00ff66;
-  background-color: rgba(0, 255, 102, 0.1);
+  background: rgba(79, 70, 229, 0.05);
+  color: #4f46e5;
 }
 
-.mobile-inactive {
-  color: #d1d5db;
-}
-
-.mobile-inactive:active {
-  background-color: rgba(255, 255, 255, 0.05);
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

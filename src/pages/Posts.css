@@ -1,152 +1,190 @@
+/* --- Filter & Sort Controls --- */
+.main-title, .posts-header{
+  color:#1a1a1a;
+}
 .posts-wrapper {
-  padding: 3rem 1rem; /* Reduced top padding for mobile */
+  background-color: #ebebeb; /* Your requested background */
   min-height: 100vh;
+  padding: 60px 20px;
 }
 
-@media (min-width: 768px) {
-  .posts-wrapper { padding: 5rem 1rem; }
-}
-
-.posts-container {
-  max-width: 80rem;
-  margin: 0 auto;
-}
-
-/* Header & Tabs */
-.posts-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.main-title {
-  /* clamp(min, preferred, max) prevents title from breaking on small screens */
-  font-size: clamp(1.75rem, 6vw, 2.5rem);
-  font-weight: 700;
-  color: white;
-  margin-bottom: 1.5rem;
-}
-
-.tab-container {
+.filter-controls {
+  margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Stacks on small screens */
 }
 
-.tab-box {
-  background-color: #111;
-  padding: 0.25rem;
-  border-radius: 0.75rem;
-  display: inline-flex;
-  border: 1px solid #1f2937;
-  /* Allows tabs to scroll horizontally if screen is too narrow */
-  max-width: 100%;
+/* Category Chips */
+.category-chips {
+  display: flex;
+  gap: 0.75rem;
   overflow-x: auto;
+  padding-bottom: 5px;
+  /* Hide scrollbar but keep functionality */
   scrollbar-width: none; 
 }
 
-.tab-box::-webkit-scrollbar { display: none; }
+.category-chips::-webkit-scrollbar { display: none; }
 
-.tab-btn {
-  padding: 0.5rem 1.25rem; /* Slightly reduced padding for mobile */
-  border-radius: 0.5rem;
-  font-weight: 700;
-  border: none;
-  background: none;
-  color: #9ca3af;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap; /* Prevents text from wrapping inside the button */
-}
-
-@media (min-width: 768px) {
-  .tab-btn { padding: 0.5rem 2rem; }
-}
-
-.tab-btn.active {
-  background-color: #00ff66;
-  color: black;
-}
-
-/* Feed Grid */
-.posts-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Tighter gap on mobile */
-}
-
-@media (min-width: 640px) {
-  .posts-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .posts-grid { 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 2rem;
-  }
-}
-
-/* AI Panel */
-.ai-panel {
-  max-width: 48rem;
-  margin: 0 auto;
-  background-color: #111;
-  border: 1px solid rgba(0, 255, 102, 0.2);
-  padding: 1.5rem; /* Reduced padding for mobile */
-  border-radius: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .ai-panel { padding: 2rem; border-radius: 1.5rem; }
-}
-
-.input-row {
-  display: flex;
-  flex-direction: column; /* Stack input and button on mobile */
-  gap: 1rem;
-}
-
-@media (min-width: 480px) {
-  .input-row { flex-direction: row; } /* Side-by-side on larger phones/tablets */
-}
-
-.ai-input {
-  width: 100%;
-  background-color: black;
-  border: 1px solid #1f2937;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 16px; /* Prevents iOS from zooming in on focus */
-}
-
-.gen-btn {
-  width: 100%; /* Full width on mobile stacking */
-  background-color: #00ff66;
-  color: black;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  font-weight: 700;
-  border: none;
+.chip {
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
-@media (min-width: 480px) {
-  .gen-btn { width: auto; } /* Returns to natural width on larger screens */
+.chip:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
 }
 
-/* AI Result & Response Box */
-.response-box {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid #1f2937;
-  color: #d1d5db;
-  font-family: monospace;
-  font-size: 0.8125rem; /* Slightly smaller for mobile code/text views */
-  overflow-x: auto; /* Handle long code lines */
+.chip.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
 }
 
-@media (min-width: 768px) {
-  .response-box { padding: 1.5rem; font-size: 0.875rem; }
+/* Sort Dropdown */
+.sort-select {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.sort-select:focus {
+  border-color: #4f46e5;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .filter-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .category-chips {
+    width: 100%;
+    /* Allow users to see more chips are available to the right */
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+  .sort-dropdown-wrapper {
+    width: 100%;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+}
+/* --- Filter Panel Container --- */
+.filter-panel {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+  gap: 10px;
+}
+
+/* --- Filter Grid Layout --- */
+.filter-grid {
+  display: grid;
+  /* Adjusts columns based on screen size */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* --- Individual Filter Items --- */
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.filter-item label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+/* --- Inputs, Selects, and Date Picker --- */
+.filter-item input, 
+.filter-item select {
+  width: 70%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Focused State */
+.filter-item input:focus, 
+.filter-item select:focus {
+  background-color: #ffffff;
+  border-color: #4f46e5; /* Indigo accent */
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* --- Reset Button --- */
+.reset-btn {
+  margin-top: 20px;
+  background: none;
+  border: none;
+  color: #ef4444; /* Alert red */
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.reset-btn:hover {
+  opacity: 0.7;
+}
+
+/* --- Search Logic (Specific Input) --- */
+.filter-item input[type="text"] {
+  cursor: text;
+}
+
+/* --- Responsive Behavior --- */
+@media (max-width: 768px) {
+  .filter-panel {
+    padding: 16px;
+    margin: 0 10px 30px 10px;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr; /* Stacks on mobile */
+    gap: 15px;
+  }
 }
