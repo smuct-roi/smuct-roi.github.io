@@ -33,7 +33,7 @@ const About = () => {
           <div className="visual">
             <div className="image-box">
               <img 
-                src="https://picsum.photos/seed/lab/800/800" 
+                src="public/logo/logo.png" 
                 alt="Innovation Hub" 
                 className="image"
               />

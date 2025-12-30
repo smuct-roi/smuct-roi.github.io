@@ -59,9 +59,9 @@ body {
 
 /* --- Visual Image Box --- */
 .image-box {
-  aspect-ratio: 1 / 1;
+ 
   background: #ffffff;
-  border-radius: 2.5rem;
+  border-radius: .5rem;
   border: 1px solid #d1d5db;
   overflow: hidden;
   position: relative;

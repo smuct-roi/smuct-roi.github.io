@@ -92,41 +92,77 @@ html, body {
 }
 
 /* --- Form Side (Right) --- */
+/* --- Form Side (Right) - Reduced Size --- */
 .form-column {
   background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 2rem;
+  padding: 1.5rem;          /* Reduced from 2rem/3rem */
+  border-radius: 1.5rem;    /* Slightly smaller radius to match scale */
   border: 1px solid #e2e8f0;
   position: relative;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  
+  /* Size constraint */
+  max-width: 450px;         /* Limits how wide the form can get */
+  width: 100%;
+  margin: 0 auto;           /* Centers it if it's the only item in a row */
 }
 
 @media (min-width: 768px) {
   .form-column {
-    padding: 3rem;
+    padding: 2rem;          /* Reduced from 3rem */
   }
 }
 
 .form-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;        /* Reduced from 1.75rem */
   font-weight: 900;
   color: #0f172a;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;    /* Tightened spacing */
   letter-spacing: -0.02em;
 }
 
 .form-note {
   color: #64748b;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
+  font-size: 0.875rem;      /* Smaller font size */
+  margin-bottom: 1.5rem;    /* Reduced from 2rem */
 }
 
 .feedback-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;                /* Reduced gap between fields from 1.5rem */
 }
 
+.field {
+  width: 100%;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #000000;           /* Set text color to black */
+  border-radius: 0.6rem;    /* Slightly more compact corners */
+  padding: 0.75rem 1rem;    /* Reduced vertical padding from 0.875rem */
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.area {
+  resize: vertical;
+  min-height: 80px;        /* Reduced height from 120px */
+}
+
+.send-btn {
+  width: 100%;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 800;
+  padding: 0.875rem;        /* Slightly smaller button */
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  margin-top: 0.25rem;
+}
 .label {
   display: block;
   color: #1e293b;
@@ -250,4 +286,22 @@ html, body {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to drop and map to fill the bottom */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.info-column, .form-column {
+  flex: 1;
+  min-width: 300px; /* Adjust based on your design */
+}
+
+.map-section {
+  border-radius: 2rem;
+  width: 100%; /* Forces map to span the entire bottom width */
+  margin-top: 2rem;
+  border-color: #4338ca;
 }
