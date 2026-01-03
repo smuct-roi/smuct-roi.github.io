@@ -1,8 +1,10 @@
 /* --- Filter & Sort Controls --- */
 .main-title, .posts-header{
+   margin-top: 2rem;
   color:#1a1a1a;
 }
 .posts-wrapper {
+   margin-top: 5rem;
   background-color: #ebebeb; /* Your requested background */
   min-height: 100vh;
   
