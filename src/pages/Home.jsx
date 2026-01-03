@@ -5,6 +5,8 @@ import { projects } from '../data/projects';
 import PostCard from '../components/PostCard';
 import ProjectCard from '../components/ProjectCard';
 import './Home.css';
+import "./styles/global.css";
+
 
 const Home = () => {
   const [search, setSearch] = useState('');

@@ -5,7 +5,8 @@
 .posts-wrapper {
   background-color: #ebebeb; /* Your requested background */
   min-height: 100vh;
-  padding: 60px 20px;
+  
+
 }
 
 .filter-controls {
@@ -94,8 +95,9 @@
 }
 /* --- Filter Panel Container --- */
 .filter-panel {
-  background: #ffffff;
-  padding: 10px;
+ 
+  
+  padding: px;
   border-radius: 20px;
   border: 1px solid #dcdcdc;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -114,6 +116,7 @@
 
 /* --- Individual Filter Items --- */
 .filter-item {
+  width: 27rem;
   display: flex;
   flex-direction: column;
   text-align: left;

@@ -1,6 +1,6 @@
 /* --- Global Home Wrapper --- */
 .home-wrapper {
-  padding-bottom: 8rem; /* pb-32 */
+  padding-bottom: auto; /* pb-32 */
   background-color: #ebebeb;
   overflow-x: hidden;
   padding: auto;
@@ -50,12 +50,12 @@
 }
 
 .hero-container {
-  max-width: 80rem;
-  margin: 0 auto;
+  max-width: auto;
+  margin:  auto;
   padding: 5rem 1.5rem;
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: auto;
 }
 
 .status-tag-wrapper {
@@ -80,7 +80,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 10vw, 8rem); /* Fluid typography */
+  font-size: clamp(3.5rem, 10vw, 8rem); 
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 2.5rem;
@@ -260,15 +260,19 @@
 
 /* --- Grids --- */
 .posts-grid, .projects-grid {
+  padding-left: .5cm;
+  padding-right: .5cm;
   display: grid;
+  /* Default for mobile: 1 column */
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
   margin-top: 4rem;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-  .posts-grid { grid-template-columns: repeat(3, 1fr); }
-  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* --- Header Flex Layouts --- */
@@ -316,7 +320,6 @@
 
 .small-icon { width: 1rem; height: 1rem; }
 .navbar-root {
-  position: sticky; /* Keeps it at the top */
   top: 0;           /* Sticks to the very top */
   z-index: 1000;    /* Ensures it stays above all other content */
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */

@@ -1,14 +1,21 @@
 /* --- Navbar Container (Sticky Logic) --- */
 .navbar {
-  position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px); /* Glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-root {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
 
   width: 100%;
   z-index: 1000; /* Keeps it above the Apply card and other content */

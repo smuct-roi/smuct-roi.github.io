@@ -1,0 +1,73 @@
+/* ===============================
+   GLOBAL RESPONSIVE FOUNDATION
+   =============================== */
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ebebeb;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Universal container */
+.page-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Universal responsive images */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent layout breaking */
+section,
+div {
+  max-width: 100%;
+}
+
+/* Mobile-first typography scaling */
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+p {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* Universal grid helper (optional) */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Small devices fixes */
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}

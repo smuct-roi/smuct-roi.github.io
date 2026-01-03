@@ -34,7 +34,7 @@ html, body {
 
 /* --- Global Navbar Stickiness --- */
 .navbar-root {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 1000;
   background-color: rgba(235, 235, 235, 0.85); /* Frosted grey matching #ebebeb */
