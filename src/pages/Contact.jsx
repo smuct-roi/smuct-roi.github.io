@@ -35,7 +35,7 @@ const Contact = () => {
               </div>
               <div className="text-box">
                 <h4 className="detail-label">Email Us</h4>
-                <p className="detail-value">smuctroboticsandiotcommunity@gmail.com</p>
+                <p className="detail-value">smuctroboticsandiotcommunity<br></br>@gmail.com</p>
               </div>
             </div>
 
@@ -47,9 +47,7 @@ const Contact = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <br></br>
-              <br></br>
-              <br></br>
+              
               <div className="text-box">
                 <h4 className="detail-label">Our Location</h4>
                 <p className="detail-value">5th floor room-1506,Shanto-Mariam University of Creative Technology
