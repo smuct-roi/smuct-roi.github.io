@@ -36,9 +36,7 @@ const MemberCard = ({ member }) => {
           className="member-avatar"
         />
         {/* Safety check for department string */}
-        <div className="member-dept-tag">
-          {member.department ? member.department.split(' ')[0] : 'Dept'}
-        </div>
+        
       </div>
       <div className="member-info">
         <h3 className="member-name">{member.name}</h3>
