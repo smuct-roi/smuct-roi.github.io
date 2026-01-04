@@ -8,6 +8,15 @@ export const advisors = [
     bio: 'Specialist in Artificial Intelligence and Robotics Ethics with over 15 years of academic experience.',
     socials: { linkedin: '#' }
   },
+  {
+    id: 'faculty',
+    name: 'MD.Akram Hossin',
+    role: 'Advisor',
+    department: 'CSE & CSIT',
+    image: '/membersimage/akram.png',
+    bio: 'Development advisor',
+    socials: { linkedin: '#', github: '#'}
+  }
  
 ];
 
@@ -32,14 +41,17 @@ export const supervisors = [
 
 export const developers = [
   {
-    id: 'd1',
+    id: 'smuct-223071019',
     name: 'Nazmul Haque Fahad',
-    role: 'Lead Developer',
-    department: 'CSE ans CSIT',
+    role: 'Developer',
+    department: 'CSE & CSIT',
     image: '/membersimage/developer.png',
-    bio: 'Full-stack developer with a passion for ROS and embedded systems architecture.',
-    socials: { linkedin: '#', github: '#' }
+    bio: 'The developer of SMUCT Robotics & IoT Community Website and leads several projects on IoT  ',
+    socials: { linkedin: 'linkedin.com', github: 'github.com/Fahad-1150' }
   }
+  
+  
+  
 ];
 
 export const committeeLeaders = {

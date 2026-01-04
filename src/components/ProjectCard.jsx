@@ -1,65 +1,75 @@
 import React from 'react';
 import './ProjectCard.css';
 
-// Local definition of ProjectStatus since we removed the external types file
 const ProjectStatus = {
   RUNNING: 'Running',
   COMPLETED: 'Completed'
 };
 
+import { useNavigate } from 'react-router-dom';
+
 const ProjectCard = ({ project }) => {
   const isRunning = project.status === ProjectStatus.RUNNING;
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    // Prevent navigation if user clicked a link or button inside the card
+    if (e.target.closest('a') || e.target.closest('button')) return;
+    navigate(`/projects/${project.id}`);
+  };
 
   return (
-    <div className="card-container">
-      {/* Header Image Section */}
+    <div className="card-container" role="button" tabIndex={0} onClick={handleClick} onKeyDown={(e) => { if (e.key === 'Enter') handleClick(e); }}>
       <div className="card-header">
-        <img src={project.images[0]} alt={project.title} className="card-img" />
+        <img src={project.images && project.images.length ? project.images[0] : ''} alt={project.title} className="card-img" />
+        {project.images && project.images.length > 1 && (
+          <div className="image-count">+{project.images.length - 1}</div>
+        )}
         <div className="card-overlay"></div>
         <div className="card-header-content">
           <h3 className="card-title">{project.title}</h3>
-          <span className={`status-badge ${isRunning ? 'status-running' : 'status-completed'}`}>
-            {project.status}
-          </span>
+          <div className="card-header-right">
+            {project.isPinned && <span className="pinned-badge">📌</span>}
+            <span className={`status-badge ${isRunning ? 'status-running' : 'status-completed'}`}>
+              {project.status}
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="card-body">
         <p className="card-description">{project.description}</p>
         
+        {/* Technologies */}
         <div className="tech-section">
           <div className="section-label">Technologies</div>
-          <br></br>
           <div className="tech-list">
             {project.technologies.slice(0, 4).map((tech, idx) => (
-              <span key={idx} className="tech-tag">
-                {tech}
-              </span>
+              <span key={idx} className="tech-tag">{tech}</span>
             ))}
-            {project.technologies.length > 4 && (
-              <span className="tech-more">+{project.technologies.length - 4} more</span>
-            )}
           </div>
         </div>
 
-        {/* Footer Section */}
+        {/* Team and Members Section */}
+        <div className="team-info-section">
+          <div className="section-label">Team: {project.teamName}</div>
+          <div className="member-names-list">
+            {project.team.join(', ')}
+          </div>
+        </div>
+
         <div className="card-footer">
           <div className="team-avatars">
             {project.team.slice(0, 3).map((name, i) => (
-              <div key={i} className="avatar-circle">
+              <div key={i} className="avatar-circle" title={name}>
                  {name.split(' ').map(n => n[0]).join('')}
               </div>
             ))}
             {project.team.length > 3 && (
-               <div className="avatar-more">
-                 +{project.team.length - 3}
-               </div>
+               <div className="avatar-more">+{project.team.length - 3}</div>
             )}
           </div>
-          <button className="details-btn">
-            View Details
-          </button>
+          
         </div>
       </div>
     </div>

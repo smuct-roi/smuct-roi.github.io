@@ -8,12 +8,15 @@ import Footer from './components/Footer';
 // Pages
 import Home from './pages/Home';
 import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
 import Members from './pages/Members';
 import Posts from './pages/Posts';
+import PostDetails from './pages/PostDetails';
 import About from './pages/About';
 import Admin from './pages/Admin';
 import Contact from './pages/Contact';
 import Apply from './pages/Apply';
+import MemberDetails from './pages/MemberDetails';
 
 import './App.css'; 
 
@@ -48,7 +51,11 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/members" element={<Members />} />
+              <Route path="/members/:id" element={<MemberDetails />} />
               <Route path="/posts" element={<Posts />} />
+              <Route path="/posts/:id" element={<PostDetails />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetails />} />
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />

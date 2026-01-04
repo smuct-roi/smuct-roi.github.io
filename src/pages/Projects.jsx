@@ -10,10 +10,27 @@ const Projects = () => {
   // Safety check: if projects is undefined, the app won't crash
   const projectList = projects || [];
 
-  const filteredProjects = projectList.filter(p => {
-    if (filter === 'All') return true;
-    return p.status === filter;
-  });
+  // Filter by status then sort pinned first then date descending
+  const filteredProjects = projectList
+    .filter(p => {
+      if (filter === 'All') return true;
+      return p.status === filter;
+    })
+    .sort((a, b) => {
+      // Both pinned: order by pinnedSerial
+      if (a.isPinned && b.isPinned) {
+        const sa = typeof a.pinnedSerial === 'number' ? a.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        const sb = typeof b.pinnedSerial === 'number' ? b.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        return sa - sb;
+      }
+      // One pinned, one not: pinned comes first
+      if (a.isPinned && !b.isPinned) return -1;
+      if (!a.isPinned && b.isPinned) return 1;
+      // Neither pinned: order by date (newest first)
+      const dateA = new Date(a.completionDate || a.expectedCompletionDate || 0);
+      const dateB = new Date(b.completionDate || b.expectedCompletionDate || 0);
+      return dateB - dateA;
+    });
 
   return (
     <div className="projects-page">

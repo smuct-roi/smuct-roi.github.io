@@ -6,6 +6,22 @@
   padding: auto;
 
 }
+.view-all-btn {
+  display: flex;
+
+  color: #4f46e5;
+ 
+  font-weight: 900;
+  
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  gap: 1rem;
+  
+margin: auto;
+}
+
+
+  
 
 /* --- Hero Section --- */
 .hero {

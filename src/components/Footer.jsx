@@ -16,8 +16,8 @@ const Footer = () => {
             
             {/* Added PNG Section */}
             <div className="footer-brand-images">
-              <img src="public/logo/SMUCT-logo.png" alt="SMUCT" className="footer-png" />
-              <img src="public/logo/logo2.png" alt="SMUCT-RoI" className="footer-png" />
+              <img src="/logo/SMUCT-logo.png" alt="SMUCT" className="footer-png" />
+              <img src="/logo/logo2.png" alt="SMUCT-RoI" className="footer-png" />
             </div>
 
             <p className="footer-description">

@@ -1,17 +1,15 @@
 /* --- Root & Container --- */
 .members-wrapper {
-  background-color: #ebebeb;
+  background-color: #f8fafc; /* Subtle off-white/blue background */
   min-height: 100vh;
-  padding: 80px 0;
+  padding: 100px 0;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .members-container {
-  padding-left: 0.1cm;
-  padding-right: .1cm;
-
   max-width: 1200px;
   margin: 0 auto;
- 
+  padding: 0 20px;
 }
 
 /* --- Header Styling --- */
@@ -21,7 +19,7 @@
 }
 
 .members-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   color: #0f172a;
   letter-spacing: -0.05em;
@@ -34,6 +32,7 @@
   max-width: 600px;
   margin: 0 auto;
   font-weight: 500;
+  line-height: 1.6;
 }
 
 /* --- Section Headers --- */
@@ -46,8 +45,8 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  color: #6366f1; /* Indigo accent */
-  margin-bottom: 40px;
+  color: #6366f1; /* Modern Indigo */
+  margin-bottom: 45px;
   display: flex;
   align-items: center;
 }
@@ -56,7 +55,7 @@
   content: "";
   height: 1px;
   flex-grow: 1;
-  background: #f1f5f9;
+  background: #e2e8f0;
   margin-left: 20px;
 }
 
@@ -64,36 +63,39 @@
 .member-card {
   background: #ffffff;
   border: 1px solid #f1f5f9;
-  border-radius: 48px; /* Extra rounded for Prism style */
-  padding: 40px;
+  border-radius: 48px;
+  padding: 50px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* horizontal center */
+  justify-content: center; /* vertical center */
+
   text-align: center;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
 }
+
 
 .member-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   border-color: #e0e7ff;
-  box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 40px 70px -15px rgba(99, 102, 241, 0.15);
 }
 
-/* --- Avatar & Tag --- */
+/* --- Avatar & Dept Tag --- */
 .member-avatar-wrapper {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 32px;
+ width: 14rem; height: 14rem; margin: 0 auto 1.5rem; background-color: white;
+  justify-content: center;
 }
 
 .member-avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  border: 6px solid #fff;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease;
+  display: block;
 }
+
+
 
 .member-card:hover .member-avatar {
   transform: scale(1.05);
@@ -104,18 +106,19 @@
   bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  background: #0f172a;
+  background: #0f172a; /* Dark navy tag */
   color: #fff;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: 999px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* --- Info --- */
+/* --- Info Styling --- */
 .member-name {
   font-size: 1.5rem;
   font-weight: 900;
@@ -130,23 +133,24 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: #6366f1;
-  background: #eef2ff;
+  background: #f5f3ff; /* Very light purple tint */
   display: inline-block;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 99px;
   margin-bottom: 24px;
 }
 
 .member-bio {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: #64748b;
-  line-height: 1.6;
+  line-height: 1.7;
   font-style: italic;
   margin-bottom: 24px;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limits bio to 2 lines */
+  -webkit-line-clamp: 2; /* Limits bio to 2 lines for uniform grid */
   -webkit-box-orient: vertical;
   overflow: hidden;
+  padding: 0 10px;
 }
 
 /* --- Socials --- */
@@ -160,17 +164,17 @@
 
 .member-link {
   color: #cbd5e1;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .member-link:hover {
   color: #6366f1;
-  transform: scale(1.1);
+  transform: translateY(-3px);
 }
 
 .member-svg-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 /* --- Responsive Grids --- */
@@ -179,19 +183,14 @@
   gap: 32px;
 }
 
-/* Default Mobile: 1 Column */
-.members-grid-3, .members-grid-4 {
-  grid-template-columns: 1fr;
-}
-
-/* Tablet: 2 Columns */
+/* Tablet (2 Columns) */
 @media (min-width: 640px) {
   .members-grid-3, .members-grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop: 3 and 4 Columns */
+/* Desktop (3 and 4 Columns) */
 @media (min-width: 1024px) {
   .members-grid-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -199,19 +198,21 @@
   .members-grid-4 {
     grid-template-columns: repeat(4, 1fr);
   }
-  
-  .members-title {
-    font-size: 4.5rem;
-  }
 }
 
-/* Extra small mobile adjustments */
+/* Mobile Adjustments */
 @media (max-width: 480px) {
   .member-card {
-    padding: 30px 20px;
+    padding: 40px 20px;
+    border-radius: 32px;
   }
   .member-avatar-wrapper {
-    width: 130px;
-    height: 130px;
+ width: 14rem; height: 14rem; margin: 0 auto 1.5rem; background-color: white;
+}
+
+
+
+  .members-title {
+    font-size: 2.25rem;
   }
 }

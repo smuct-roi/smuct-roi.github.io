@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Added useNavigate
 import { posts } from '../data/posts';
 import { projects } from '../data/projects';
 import PostCard from '../components/PostCard';
@@ -7,17 +7,42 @@ import ProjectCard from '../components/ProjectCard';
 import './Home.css';
 import "./styles/global.css";
 
-
 const Home = () => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
+  // Helper function for sorting: pinned items by pinnedSerial, non-pinned by date (newest first)
+  const sortContent = (data) => {
+    const getDateValue = (item) => item.date || item.completionDate || item.expectedCompletionDate || 0;
+    return [...data].sort((a, b) => {
+      // If both pinned: order by pinnedSerial (ascending)
+      if (a.isPinned && b.isPinned) {
+        const sa = typeof a.pinnedSerial === 'number' ? a.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        const sb = typeof b.pinnedSerial === 'number' ? b.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        return sa - sb;
+      }
+      // One pinned, one not: pinned first
+      if (a.isPinned && !b.isPinned) return -1;
+      if (!a.isPinned && b.isPinned) return 1;
+      // Neither pinned: sort by relevant date (newest first)
+      return new Date(getDateValue(b)).getTime() - new Date(getDateValue(a)).getTime();
+    });
+  };
 
   const filteredPosts = useMemo(() => {
-    return posts
-      .filter(p => p.title.toLowerCase().includes(search.toLowerCase()) || 
-                   p.content.toLowerCase().includes(search.toLowerCase()))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 3);
+    const sorted = sortContent(posts);
+    return sorted
+      .filter(p => 
+        p.title.toLowerCase().includes(search.toLowerCase()) || 
+        p.content.toLowerCase().includes(search.toLowerCase())
+      )
+      .slice(0, 3); // Show only top 3
   }, [search]);
+
+  const featuredProjects = useMemo(() => {
+    const sorted = sortContent(projects);
+    return sorted.slice(0, 3); // Show only top 3
+  }, []);
 
   const stats = [
     { label: 'Completed Projects', value: '25+' },
@@ -28,7 +53,7 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
-      {/* Hero Section */}
+     {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg">
           <div className="radial-overlay"></div>
@@ -37,7 +62,7 @@ const Home = () => {
         
         <div className="hero-container">
           <div className="hero-content">
-            <span className="status-tag">Initializing Community v2.0...</span>
+            <span className="status-tag">Assalamu-Walaikum</span>
             <h1 className="hero-title">
               Engineering <span className="gradient-text">The Future</span> of Connectivity.
             </h1>
@@ -81,27 +106,31 @@ const Home = () => {
               <h2 className="section-title">Community Feed</h2>
               <p className="section-subtitle">Stay updated with our latest activities.</p>
             </div>
-            <div className="search-box">
-              <input 
-                type="text" 
-                placeholder="Search posts..." 
-                className="search-input"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <svg className="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+            
+            <div className="feed-actions" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+              <div className="search-box">
+                <input 
+                  type="text" 
+                  placeholder="Search posts..." 
+                  className="search-input"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+              {/* Redirect to posts.jsx route */}
+              <button onClick={() => navigate('/posts')} className="view-all-btn">
+                View All Posts
+              </button>
             </div>
           </div>
 
           <div className="posts-grid">
             {filteredPosts.map(post => (
-              <PostCard key={post.id} post={post} />
+              <div key={post.id} className={post.isPinned ? "pinned-wrapper" : ""}>
+                {post.isPinned && <span className="pinned-badge">📌 Pinned</span>}
+                <PostCard post={post} />
+              </div>
             ))}
-            {filteredPosts.length === 0 && (
-              <div className="no-results">No posts found matching your search.</div>
-            )}
           </div>
         </div>
       </section>
@@ -119,7 +148,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="projects-grid">
-            {projects.slice(0, 3).map(project => (
+            {featuredProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>

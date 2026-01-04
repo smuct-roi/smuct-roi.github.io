@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PostCard.css';
 
 const PostCategory = {
@@ -17,21 +18,27 @@ const PostCard = ({ post }) => {
     }
   };
 
-  // The card wrapper is now an <a> tag if sourceUrl exists
+  const mainImage = (post.images && post.images.length > 0) ? post.images[0] : (post.image || '/postimages/default.png');
+
+  // Clicking the card navigates to the internal post details page; the external source (if any) is available as a small link
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    if (e.target.closest('a') || e.target.closest('button')) return;
+    navigate(`/posts/${post.id}`);
+  };
+
   return (
-    <a 
-      href={post.sourceUrl || "#"} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="post-card-link"
-    >
+    <div className="post-card-link" role="button" tabIndex={0} onClick={handleClick} onKeyDown={(e) => { if (e.key === 'Enter') handleClick(e); }}>
       <div className="post-card group">
         <div className="post-image-container">
           <img 
-            src={post.image} 
+            src={mainImage} 
             alt={post.title} 
             className="post-image"
           />
+          {post.images && post.images.length > 1 && (
+            <div className="image-count">+{post.images.length - 1}</div>
+          )}
           <div className="post-badge-pos">
             <span className={`post-badge ${getCategoryClass(post.category)}`}>
               {post.category}
@@ -42,6 +49,7 @@ const PostCard = ({ post }) => {
         <div className="post-content">
           <div className="post-meta">
             <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            
             <span>By {post.author}</span>
           </div>
           
@@ -67,7 +75,7 @@ const PostCard = ({ post }) => {
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 

@@ -12,8 +12,10 @@ export const posts = [
     date: '2025-12-10',
     author: 'SMUCT IoT Community',
     category: PostCategory.COMMUNITY,
-    content: '',
-    image: '/postimages/p2.jpeg'
+    content: 'Project Showcasing 2025',
+    images: ['/postimages/p2.jpeg', '/postimages/p1.jpeg'],
+    isPinned: true,
+    pinnedSerial: 2
   },
   {
     id: 'news2',
@@ -22,18 +24,22 @@ export const posts = [
     author: 'SMUCT IoT Community',
     category: PostCategory.COMMUNITY,
     content: '',
-    image: '/postimages/p1.jpeg',
-    source: 'google.com'
+    images: ['/postimages/p1.jpeg'],
+    source: 'google.com',
+    isPinned: true,
+    pinnedSerial: 1
   },
 {
     id: 'news3',
-    title: 'Check-out ouer new web site:',
-    date: '2025-12-127',
+    title: 'Check-out our new web site:',
+    date: '2025-12-12',
     author: 'SMUCT IoT Community',
     category: PostCategory.COMMUNITY,
-    content: '',
-    image: '/postimages/p3.png',
-    source: 'smuct-roi.github.io'
+    content: 'We appreciate the work by @Nazmul Haque Fahad on updating the site ',
+    images: ['/postimages/p3.png'],
+    source: 'smuct-roi.github.io',
+    isPinned: false,
+    people: ['Nazmul Haque Fahad','MD. Naim']
   }
 
 ];

@@ -20,6 +20,9 @@
   box-shadow: 0 30px 60px -15px rgba(79, 70, 229, 0.12);
 }
 
+.post-card-link { cursor: pointer; text-decoration: none; color: inherit; }
+.post-card-link:focus { outline: 3px solid rgba(79,70,229,0.12); outline-offset: 3px; }
+
 /* --- Image Section --- */
 .post-image-container {
   position: relative;
@@ -37,6 +40,20 @@
 
 .post-card:hover .post-image {
   transform: scale(1.1); /* group-hover:scale-110 */
+}
+
+/* Small badge showing how many extra images are available */
+.image-count {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 8px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
 }
 
 /* Badge Positioning */

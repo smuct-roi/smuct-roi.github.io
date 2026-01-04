@@ -19,6 +19,16 @@ const Posts = () => {
       return matchesSearch && matchesCategory && matchesDate;
     })
     .sort((a, b) => {
+      // Both pinned: order by pinnedSerial (ascending)
+      if (a.isPinned && b.isPinned) {
+        const sa = typeof a.pinnedSerial === 'number' ? a.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        const sb = typeof b.pinnedSerial === 'number' ? b.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        return sa - sb;
+      }
+      // One pinned, one not: pinned comes first
+      if (a.isPinned && !b.isPinned) return -1;
+      if (!a.isPinned && b.isPinned) return 1;
+      // Neither pinned: order by date
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
       return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
@@ -83,7 +93,10 @@ const Posts = () => {
 
         <div className="posts-grid">
           {filteredPosts.map(post => (
-            <PostCard key={post.id} post={post} />
+            <div key={post.id} className={post.isPinned ? "pinned-wrapper" : ""}>
+              {post.isPinned && <span className="pinned-badge">📌 Pinned</span>}
+              <PostCard post={post} />
+            </div>
           ))}
         </div>
 
