@@ -116,6 +116,7 @@ const Members = () => {
               <button className="show-all-button" onClick={() => setShowAll(prev => ({ ...prev, advisors: !prev.advisors }))}>
                 {showAll.advisors ? 'Show less' : 'Show all'}
               </button>
+              
             </div>
           )}
         </section>
