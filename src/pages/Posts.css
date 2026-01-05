@@ -118,7 +118,7 @@
 
 /* --- Individual Filter Items --- */
 .filter-item {
-  width: 27rem;
+  width: auto;
   display: flex;
   flex-direction: column;
   text-align: left;

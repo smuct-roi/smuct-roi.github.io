@@ -67,7 +67,7 @@ const Home = () => {
               Engineering <span className="gradient-text">The Future</span> of Connectivity.
             </h1>
             <p className="hero-description">
-              The SMUCT Robotics & IoT Committee is a hub for student innovation, building smart systems and autonomous solutions for real-world challenges.
+              The SMUCT Robotics & IoT Community is a hub for student innovation, building smart systems and autonomous solutions for real-world challenges.
             </p>
             <div className="hero-actions">
             

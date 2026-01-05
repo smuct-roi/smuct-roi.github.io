@@ -1,11 +1,13 @@
 /* --- Global Home Wrapper --- */
 .home-wrapper {
-  padding-bottom: auto; /* pb-32 */
+  padding-bottom: auto;
+  /* pb-32 */
   background-color: #ebebeb;
   overflow-x: hidden;
   padding: auto;
 
 }
+
 .view-all-btn {
   background-color: transparent;
   border-radius: 10%;
@@ -13,18 +15,18 @@
   display: flex;
 
   color: #4f46e5;
- 
+
   font-weight: 900;
-  
+
   text-transform: uppercase;
   letter-spacing: 0.2em;
   gap: 1rem;
-  
-margin: auto;
+
+  margin: auto;
 }
 
 
-  
+
 
 /* --- Hero Section --- */
 .hero {
@@ -33,7 +35,7 @@ margin: auto;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color:#ebebeb;
+  background-color: #ebebeb;
 }
 
 /* Advanced Prism Mesh Background */
@@ -49,7 +51,8 @@ margin: auto;
   left: -10%;
   width: 50%;
   height: 50%;
-  background-color: #ebebeb; /* indigo-100 */
+  background-color: #ebebeb;
+  /* indigo-100 */
   border-radius: 50%;
   filter: blur(140px);
   opacity: 0.6;
@@ -64,13 +67,20 @@ margin: auto;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }
 
 .hero-container {
   max-width: auto;
-  margin:  auto;
+  margin: auto;
   padding: 5rem 1.5rem;
   position: relative;
   z-index: 10;
@@ -99,7 +109,7 @@ margin: auto;
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 10vw, 8rem); 
+  font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 2.5rem;
@@ -107,7 +117,8 @@ margin: auto;
   letter-spacing: -0.05em;
 }
 
-.gradient-text, .prism-gradient-text {
+.gradient-text,
+.prism-gradient-text {
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -181,12 +192,14 @@ margin: auto;
 }
 
 @media (min-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .stat-item {
   text-align: center;
-  
+
 }
 
 .stat-value {
@@ -194,13 +207,22 @@ margin: auto;
   font-weight: 900;
   letter-spacing: -0.05em;
   margin-bottom: 0.5rem;
-  color: #001aff; /* Default indigo-400 */
+  color: #001aff;
+  /* Default indigo-400 */
 }
 
 /* Adding variety to colors like the JSX */
-.stat-item:nth-child(2) .stat-value { color: #000000; }
-.stat-item:nth-child(3) .stat-value { color: #000000; }
-.stat-item:nth-child(4) .stat-value { color: #000000; }
+.stat-item:nth-child(2) .stat-value {
+  color: #000000;
+}
+
+.stat-item:nth-child(3) .stat-value {
+  color: #000000;
+}
+
+.stat-item:nth-child(4) .stat-value {
+  color: #000000;
+}
 
 .stat-label {
   color: #94a3b8;
@@ -211,11 +233,14 @@ margin: auto;
 }
 
 /* --- Sections Shared Styles --- */
-.feed-section, .projects-section {
+.feed-section,
+.projects-section {
   padding: 8rem 0;
 }
 
-.feed-section { background-color: rgba(248, 250, 252, 0.5); }
+.feed-section {
+  background-color: rgba(248, 250, 252, 0.5);
+}
 
 .section-title {
   font-size: 3rem;
@@ -247,18 +272,20 @@ margin: auto;
   border: 1px solid #e2e8f0;
   padding: 1.25rem 2rem;
   border-radius: 1.5rem;
-  
+
   /* Text Styling */
-  color: #000000;         /* Set typed text to black */
+  color: #000000;
+  /* Set typed text to black */
   font-weight: 700;
   font-size: 0.875rem;
-  
+
   transition: all 0.3s ease;
 }
 
 /* Optional: styling the placeholder text specifically */
 .search-input::placeholder {
-  color: #64748b;        /* Keeps the hint text a readable grey */
+  color: #64748b;
+  /* Keeps the hint text a readable grey */
   font-weight: 500;
 }
 
@@ -266,8 +293,10 @@ margin: auto;
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-  color: #000000;         /* Ensures text stays black on focus */
+  color: #000000;
+  /* Ensures text stays black on focus */
 }
+
 .search-icon {
   position: absolute;
   right: 1.5rem;
@@ -278,30 +307,53 @@ margin: auto;
 }
 
 /* --- Grids --- */
-.posts-grid,
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+
+  margin: 4rem auto;
+  /* center the grid container */
+  width: 90%;
+
+  justify-items: center;
+  /* center items horizontally */
+  align-items: center;
+  /* center items vertically (if needed) */
+
+}
+
 .projects-grid {
-  padding-left: .5cm;
-  padding-right: .5cm;
+
 
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 3rem);
 
-  margin: 4rem auto;   /* center the grid container */
+  margin: 4rem auto;
+  /* center the grid container */
   width: 100%;
 
-  justify-items: center; /* center items horizontally */
-  align-items: center;   /* center items vertically (if needed) */
+  justify-items: center;
+  /* center items horizontally */
+  align-items: center;
+  /* center items vertically (if needed) */
 }
 
 
 @media (min-width: 768px) {
-  .posts-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* --- Header Flex Layouts --- */
-.feed-header, .projects-header {
+.feed-header,
+.projects-header {
   padding-left: .7cm;
   padding-right: .7cm;
   display: flex;
@@ -311,7 +363,9 @@ margin: auto;
 }
 
 @media (min-width: 768px) {
-  .feed-header, .projects-header {
+
+  .feed-header,
+  .projects-header {
     flex-direction: row;
     align-items: flex-end;
   }
@@ -345,15 +399,24 @@ margin: auto;
   color: #fff;
 }
 
-.small-icon { width: 1rem; height: 1rem; }
+.small-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 .navbar-root {
-  top: 0;           /* Sticks to the very top */
-  z-index: 1000;    /* Ensures it stays above all other content */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* Modern frosted-glass effect */
+  top: 0;
+  /* Sticks to the very top */
+  z-index: 1000;
+  /* Ensures it stays above all other content */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  /* Modern frosted-glass effect */
   width: 100%;
 }
-.pinned-badge{
+
+.pinned-badge {
   background-color: aqua;
 
 

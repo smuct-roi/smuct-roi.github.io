@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { advisors, supervisors, developers } from '../data/members';
@@ -61,6 +61,28 @@ const MemberCard = ({ member }) => {
 };
 
 const Members = () => {
+  const [query, setQuery] = useState('');
+  const [showAll, setShowAll] = useState({
+    advisors: false,
+    supervisors: false,
+    developers: false,
+  });
+
+  const filterByQuery = (list) => {
+    if (!query.trim()) return list;
+    const q = query.trim().toLowerCase();
+    return list.filter(m => (m.name || '').toLowerCase().includes(q));
+  };
+
+  const advisorsFiltered = filterByQuery(advisors);
+  const supervisorsFiltered = filterByQuery(supervisors);
+  const developersFiltered = filterByQuery(developers);
+
+  const visibleFor = (list, key) => {
+    if (query.trim()) return list;
+    return showAll[key] ? list : list.slice(0, 3);
+  };
+
   return (
     <div className="members-wrapper">
       <div className="members-container">
@@ -69,25 +91,63 @@ const Members = () => {
           <p className="members-subtitle">Meet the brilliant minds guiding our robotics and IoT initiatives forward.</p>
         </header>
 
+        <div className="members-controls">
+          <input
+            className="members-search"
+            type="search"
+            placeholder="Find member by name..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Find member by name"
+          />
+          {query && (
+            <button className="clear-btn" onClick={() => setQuery('')} aria-label="Clear search">Clear</button>
+          )}
+        </div>
+
         <section className="members-section">
           <h2 className="members-section-title">Faculty Advisors</h2>
           <div className="members-grid members-grid-3">
-            {advisors?.map(m => <MemberCard key={m.id} member={m} />)}
+            {visibleFor(advisorsFiltered, 'advisors')?.map(m => <MemberCard key={m.id} member={m} />)}
           </div>
+          {advisorsFiltered.length === 0 && <p className="no-results">No members found.</p>}
+          {advisorsFiltered.length > 3 && !query && (
+            <div className="section-actions">
+              <button className="show-all-button" onClick={() => setShowAll(prev => ({ ...prev, advisors: !prev.advisors }))}>
+                {showAll.advisors ? 'Show less' : 'Show all'}
+              </button>
+            </div>
+          )}
         </section>
 
         <section className="members-section">
-          <h2 className="members-section-title">Lab Supervisors</h2>
+          <h2 className="members-section-title">Members</h2>
           <div className="members-grid members-grid-3">
-            {supervisors?.map(m => <MemberCard key={m.id} member={m} />)}
+            {visibleFor(supervisorsFiltered, 'supervisors')?.map(m => <MemberCard key={m.id} member={m} />)}
           </div>
+          {supervisorsFiltered.length === 0 && <p className="no-results">No members found.</p>}
+          {supervisorsFiltered.length > 3 && !query && (
+            <div className="section-actions">
+              <button className="show-all-button" onClick={() => setShowAll(prev => ({ ...prev, supervisors: !prev.supervisors }))}>
+                {showAll.supervisors ? 'Show less' : 'Show all'}
+              </button>
+            </div>
+          )}
         </section>
 
         <section className="members-section">
           <h2 className="members-section-title">Developers</h2>
           <div className="members-grid members-grid-4">
-            {developers?.map(m => <MemberCard key={m.id} member={m} />)}
+            {visibleFor(developersFiltered, 'developers')?.map(m => <MemberCard key={m.id} member={m} />)}
           </div>
+          {developersFiltered.length === 0 && <p className="no-results">No members found.</p>}
+          {developersFiltered.length > 3 && !query && (
+            <div className="section-actions">
+              <button className="show-all-button" onClick={() => setShowAll(prev => ({ ...prev, developers: !prev.developers }))}>
+                {showAll.developers ? 'Show less' : 'Show all'}
+              </button>
+            </div>
+          )}
         </section>
       </div>
     </div>

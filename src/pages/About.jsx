@@ -17,7 +17,7 @@ const About = () => {
           <div className="content">
             <h1 className="title">Mission & Vision</h1>
             <p className="description">
-              The Robotics & IoT Committee was established to bridge the gap between theoretical engineering and practical innovation. We provide students with the resources, mentorship, and environment needed to build the hardware and software of tomorrow.
+              The Robotics & IoT Community was established to bridge the gap between theoretical engineering and practical innovation. We provide students with the resources, mentorship, and environment needed to build the hardware and software of tomorrow.
             </p>
             <p className="description">
               Our mission is to foster a culture of problem-solving where student-led teams develop IoT nodes, autonomous vehicles, and industrial automation prototypes that solve local challenges.

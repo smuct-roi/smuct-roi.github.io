@@ -20,22 +20,31 @@ export const advisors = [
  
 ];
 
-export const supervisors = [
+export const supervisors = [ //Members ignore supervisors
   {
-    id: 's1',
-    name: 'Mr. Robert Thompson',
-    role: 'Lab Supervisor',
-    department: 'Electronics',
-    image: 'https://picsum.photos/seed/profs/400/400',
-    bio: 'Oversees day-to-day lab operations and hardware prototyping safety protocols.'
-  },
-  {
-    id: 's2',
-    name: 'Ms. Clara Oswald',
-    role: 'Project Manager',
-    department: 'Information Technology',
-    image: 'https://picsum.photos/seed/clara/400/400',
-    bio: 'Coordinates cross-departmental projects and ensures delivery timelines are met.'
+   id: 'smuct-223071019',
+    name: 'Zubayed Amin',
+    role: 'Graphic Designer',
+    department: 'CSE & CSIT',
+    image: '/membersimage/zubayed.png',
+    bio: 'The Graphics Designer of SMUCT Robotics & IoT Community Website',
+    socials: { linkedin: 'linkedin.com/zubayed-amin', github: 'github.com/Zubayed-Amin' }
+  },{
+    id: 'smuct-223071109',
+    name: 'Mostofa Hasin Mahdi',
+    role: 'Designer',
+    department: 'CSE & CSIT',
+    image: '/membersimage/mahdi.png',
+    bio: 'Graphic designer of SMUCT Robotics & IoT Community Website',
+    socials: { linkedin: 'linkedin.com/in/mostofa-hasin-mahdi-76777a182?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: 'github.com/Mostofa-Hasin-Mahdi' }
+},
+{ id: 'smuct-223071033',
+    name: 'S. M. Mehrab Hossain Jayeed',
+    role: 'Member',
+    department: 'CSE & CSIT',
+    image: '/membersimage/jayed.png',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+    socials: { linkedin: 'https://www.linkedin.com/in/mhjayeed715', github: 'https://github.com/mhjayeed715' }
   }
 ];
 
@@ -49,8 +58,6 @@ export const developers = [
     bio: 'The developer of SMUCT Robotics & IoT Community Website and leads several projects on IoT  ',
     socials: { linkedin: 'linkedin.com', github: 'github.com/Fahad-1150' }
   }
-  
-  
   
 ];
 
