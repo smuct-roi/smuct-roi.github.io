@@ -84,13 +84,10 @@ const MemberDetails = () => {
                   <div className="value">#{String(member.id).toUpperCase()}</div>
                 </div>
                 <div className="row">
-                  <div className="label">Department Unit</div>
+                  <div className="label">Department</div>
                   <div className="value">{member.department}</div>
                 </div>
-                <div className="row">
-                  <div className="label">Connected Team</div>
-                  <div className="value">{connectedTeam}</div>
-                </div>
+               
 
                 <div className="row">
                   <div className="label">Technology Tags</div>

@@ -22,20 +22,20 @@ export const advisors = [
 
 export const supervisors = [ //Members ignore supervisors
   {
-   id: 'smuct-223071019',
+   id: 'smuct-223071041',
     name: 'Zubayed Amin',
     role: 'Graphic Designer',
     department: 'CSE & CSIT',
     image: '/membersimage/zubayed.png',
-    bio: 'The Graphics Designer of SMUCT Robotics & IoT Community Website',
-    socials: { linkedin: 'linkedin.com/zubayed-amin', github: 'github.com/Zubayed-Amin' }
+    bio: 'The Graphics Designer of SMUCT Robotics & IoT Community',
+    socials: { linkedin: 'linkedin.com/in/zubayed-amin', github: 'github.com/Zubayed-Amin' }
   },{
     id: 'smuct-223071109',
     name: 'Mostofa Hasin Mahdi',
-    role: 'Designer',
+    role: 'Member',
     department: 'CSE & CSIT',
     image: '/membersimage/mahdi.png',
-    bio: 'Graphic designer of SMUCT Robotics & IoT Community Website',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
     socials: { linkedin: 'linkedin.com/in/mostofa-hasin-mahdi-76777a182?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: 'github.com/Mostofa-Hasin-Mahdi' }
 },
 { id: 'smuct-223071033',
@@ -45,7 +45,15 @@ export const supervisors = [ //Members ignore supervisors
     image: '/membersimage/jayed.png',
     bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
     socials: { linkedin: 'https://www.linkedin.com/in/mhjayeed715', github: 'https://github.com/mhjayeed715' }
+  },{ id: 'smuct-223071036',
+    name: 'Md. Imon Hosen',
+    role: 'Member',
+    department: 'CSE & CSIT',
+    image: '/membersimage/imon36.png',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+    socials: { linkedin: 'https://www.linkedin.com/in/mdimonhosen', github: 'https://github.com/mdimonhosen' }
   }
+
 ];
 
 export const developers = [
