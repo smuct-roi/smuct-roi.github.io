@@ -1,29 +1,152 @@
-.post-detail-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.post-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.posts-wrapper{
+
+    padding-left: .7cm;
+    padding-right: .7cm;
+}
 
 /* Carousel */
-.carousel { position: relative; display:flex; align-items:center; justify-content:center; background:#0f172a; border-radius:12px; overflow:hidden; }
-.carousel-img { width:100%; height:420px; object-fit:cover; display:block; }
-.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.95); border:none; width:44px; height:44px; border-radius:50%; font-size:24px; font-weight:900; cursor:pointer; }
-.carousel-btn.left { left: 12px; }
-.carousel-btn.right { right: 12px; }
-.carousel-thumbs { display:flex; gap:8px; margin-top:12px; }
-.thumb-btn { border: none; padding:0; background:none; cursor:pointer; border-radius:6px; overflow:hidden; width:72px; height:48px; }
-.thumb-btn img { width:100%; height:100%; object-fit:cover; }
-.thumb-btn.active { outline: 3px solid rgba(79,70,229,0.12); }
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+}
 
-.post-detail-image img { width: 100%; border-radius: 12px; }
+.carousel-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
 
-.post-content-full p { font-size: 1rem; line-height: 1.7; color:#0f172a; }
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+}
 
-.mention { background: none; border: 1px dashed #7e86fd; color: #4f46e5; padding: 0.15rem 0.5rem; border-radius: 6px; cursor: pointer; margin: 0 4px; font-weight:700; }
-.mention:hover { background: rgba(124,58,237,0.06); }
+.carousel-btn.left {
+    left: 12px;
+}
 
-.mentioned-members { margin-top: 1.25rem; }
-.mentioned-members h4 { margin: 0 0 0.5rem 0; font-size: 0.875rem; color: #475569; }
-.member-list.inline { display:flex; gap: 1rem; align-items:center; }
-.member-card.small { display:flex; gap:0.75rem; align-items:center; background: #fff; padding: 0.5rem 0.75rem; border-radius: 8px; border:1px solid #f1f5f9; cursor:pointer; }
-.member-card.small .member-avatar { width:40px; height:40px; border-radius:50%; object-fit:cover; }
-.member-card.small .member-name { font-weight:800; font-size:0.9rem; }
+.carousel-btn.right {
+    right: 12px;
+}
+
+.carousel-thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.thumb-btn {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 72px;
+    height: 48px;
+}
+
+.thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-btn.active {
+    outline: 3px solid rgba(79, 70, 229, 0.12);
+}
+
+.post-detail-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.post-content-full p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #0f172a;
+}
+
+.mention {
+    background: none;
+    border: 1px dashed #7e86fd;
+    color: #4f46e5;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 4px;
+    font-weight: 700;
+}
+
+.mention:hover {
+    background: rgba(124, 58, 237, 0.06);
+}
+
+.mentioned-members {
+    margin-top: 1.25rem;
+}
+
+.mentioned-members h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.875rem;
+    color: #475569;
+}
+
+.member-list.inline {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.member-card.small {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    background: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+    cursor: pointer;
+}
+
+.member-card.small .member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member-card.small .member-name {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
 
 /* Responsive tweaks */
-@media(min-width: 768px) { .post-detail-grid { grid-template-columns: 40% 60%; } }
+@media(min-width: 768px) {
+    .post-detail-grid {
+        grid-template-columns: 40% 60%;
+    }
+}
+.back{
+    font-weight: 900;
+}

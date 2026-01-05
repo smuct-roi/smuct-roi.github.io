@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { posts } from '../data/posts'; 
+import { posts } from '../data/posts';
 import PostCard from '../components/PostCard';
 import './Posts.css';
 
@@ -37,16 +37,16 @@ const Posts = () => {
   return (
     <div className="posts-wrapper">
       <div className="posts-container">
-        
+
         <header className="posts-header">
           <h1 className="main-title">Innovation & News</h1>
-          
+
           <div className="filter-panel">
             <div className="filter-grid">
               <div className="filter-item">
                 <label>Search</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="Keywords..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -65,9 +65,9 @@ const Posts = () => {
 
               <div className="filter-item">
                 <label>From Date</label>
-                <input 
-                  type="date" 
-                  value={dateFilter} 
+                <input
+                  type="date"
+                  value={dateFilter}
                   onChange={(e) => setDateFilter(e.target.value)}
                 />
               </div>
@@ -94,7 +94,9 @@ const Posts = () => {
         <div className="posts-grid">
           {filteredPosts.map(post => (
             <div key={post.id} className={post.isPinned ? "pinned-wrapper" : ""}>
-              {post.isPinned && <span className="pinned-badge">📌 Pinned</span>}
+              {post.isPinned && <span className="pinned-badge">📌</span>}
+              <br></br>
+              <br></br>
               <PostCard post={post} />
             </div>
           ))}

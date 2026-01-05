@@ -79,15 +79,23 @@ const ProjectDetails = () => {
                 {teamMembers.map((t, i) => (
                   t.member ? (
                     <div key={i} className="member-card" role="button" tabIndex={0} onClick={() => navigate(`/members/${t.member.id}`)} onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/members/${t.member.id}`); }}>
-                      
+
                       <div className="member-info">
+                        <img
+                          src={t.member.image}
+                          alt={t.member.name}
+                          className="member-img"
+                        />
+
                         <div className="member-name">{t.member.name}</div>
                         <div className="member-role">{t.member.role}</div>
                       </div>
+
                     </div>
                   ) : (
                     <div key={i} className="member-card fallback">
                       <div className="member-avatar placeholder">{t.name.split(' ').map(n => n[0]).join('')}</div>
+
                       <div className="member-info">
                         <div className="member-name">{t.name}</div>
                         <div className="member-role">External Contributor</div>

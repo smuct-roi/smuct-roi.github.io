@@ -7,6 +7,9 @@
 
 }
 .view-all-btn {
+  background-color: transparent;
+  border-radius: 10%;
+  border-color: transparent;
   display: flex;
 
   color: #4f46e5;
@@ -275,16 +278,22 @@ margin: auto;
 }
 
 /* --- Grids --- */
-.posts-grid, .projects-grid {
+.posts-grid,
+.projects-grid {
   padding-left: .5cm;
   padding-right: .5cm;
+
   display: grid;
-  /* Default for mobile: 1 column */
   grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 3rem);
-  margin-top: 4rem;
+
+  margin: 4rem auto;   /* center the grid container */
   width: 100%;
+
+  justify-items: center; /* center items horizontally */
+  align-items: center;   /* center items vertically (if needed) */
 }
+
 
 @media (min-width: 768px) {
   .posts-grid { grid-template-columns: repeat(2, 1fr); }
@@ -293,6 +302,8 @@ margin: auto;
 
 /* --- Header Flex Layouts --- */
 .feed-header, .projects-header {
+  padding-left: .7cm;
+  padding-right: .7cm;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -341,4 +352,9 @@ margin: auto;
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
   backdrop-filter: blur(10px); /* Modern frosted-glass effect */
   width: 100%;
+}
+.pinned-badge{
+  background-color: aqua;
+
+
 }

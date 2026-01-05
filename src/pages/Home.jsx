@@ -127,7 +127,9 @@ const Home = () => {
           <div className="posts-grid">
             {filteredPosts.map(post => (
               <div key={post.id} className={post.isPinned ? "pinned-wrapper" : ""}>
-                {post.isPinned && <span className="pinned-badge">📌 Pinned</span>}
+                {post.isPinned && <span className="pinned-badge">📌 </span>}
+                <br></br>
+                <br></br>
                 <PostCard post={post} />
               </div>
             ))}

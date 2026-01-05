@@ -97,6 +97,7 @@ const PostDetails = () => {
 
           <div className="post-detail-body">
             <div className="post-content-full">
+              <h1>Description:</h1>
               {renderContent(post.content)}
             </div>
 
@@ -119,7 +120,8 @@ const PostDetails = () => {
 
             {post.source && (
               <div className="post-source">
-                External source: <a href={`https://${post.source}`} target="_blank" rel="noopener noreferrer">{post.source}</a>
+                 <h1>External source:</h1>
+                 <a href={`https://${post.source}`} target="_blank" rel="noopener noreferrer">{post.source}</a>
               </div>
             )}
 
