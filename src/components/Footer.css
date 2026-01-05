@@ -1,3 +1,9 @@
+/*
+  Footer.css — Footer layout and responsive styles
+  - Brand, quick links, socials, and bottom bar
+  - Sections: brand, links, socials, bottom bar
+*/
+
 /* --- Root Styling --- */
 .footer-root {
   background-color: #000000; /* Very dark slate/black */

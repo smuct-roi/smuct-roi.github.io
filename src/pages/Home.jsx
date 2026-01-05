@@ -1,3 +1,9 @@
+/*
+  Home.jsx — Landing page with featured posts, projects and stats
+  - Includes hero, latest posts feed and featured projects sections
+  - Sections: helpers, featured lists, search/filter, UI sections
+*/
+
 import React, { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Added useNavigate
 import { posts } from '../data/posts';
@@ -11,7 +17,8 @@ const Home = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
-  // Helper function for sorting: pinned items by pinnedSerial, non-pinned by date (newest first)
+  // --- Helpers: content sorting utility
+  // Prioritizes pinned items then sorts remaining items by date
   const sortContent = (data) => {
     const getDateValue = (item) => item.date || item.completionDate || item.expectedCompletionDate || 0;
     return [...data].sort((a, b) => {
@@ -29,6 +36,7 @@ const Home = () => {
     });
   };
 
+  // --- Derived Data: filteredPosts (search-limited) and featuredProjects
   const filteredPosts = useMemo(() => {
     const sorted = sortContent(posts);
     return sorted

@@ -1,3 +1,9 @@
+/*
+  ProjectDetails.css — Styles for individual project pages
+  - Carousel, layout, meta blocks and member listing styles
+  - Sections: visual, carousel, body, member list
+*/
+
 .project-visual {
     margin-bottom: 1rem;
 }

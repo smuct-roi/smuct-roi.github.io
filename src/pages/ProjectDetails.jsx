@@ -1,3 +1,9 @@
+/*
+  ProjectDetails.jsx — Detailed view of a single project
+  - Renders gallery, project metadata, member list and description
+  - Sections: data lookup, carousel, team members, navigation
+*/
+
 import React, { useMemo, useState } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
@@ -8,8 +14,10 @@ import './ProjectDetails.css';
 const ProjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  // --- Data lookup: find the project data for the requested :id
   const project = useMemo(() => (projects || []).find(p => p.id === id), [id]);
 
+  // --- Carousel state: current slide index and navigation helpers
   const [index, setIndex] = useState(0);
   if (!project) return <Navigate to="/projects" replace />;
 
@@ -20,6 +28,7 @@ const ProjectDetails = () => {
   const next = () => setIndex(i => (i + 1) % images.length);
   const goTo = (i) => setIndex(i);
 
+  // --- Helpers: resolve team member names to known member objects when possible
   const findMember = (name) => {
     const target = String(name || '').toLowerCase().trim();
     return [...advisors, ...supervisors, ...developers].find(m => String(m.name).toLowerCase().trim() === target);

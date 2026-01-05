@@ -1,9 +1,17 @@
+/*
+  Projects.jsx — Projects listing page with filters
+  - Allows filtering by status and lists project cards with pinned ordering
+  - Sections: filters, projects grid, empty state
+*/
+
 import React, { useState } from 'react';
 // Ensure this path matches your file exactly (check if it's .js or .jsx)
 import { projects, ProjectStatus } from '../data/projects'; 
 import ProjectCard from '../components/ProjectCard';
 import './Projects.css';
 
+// --- Page Component: Projects
+// State and handlers for filtering and rendering project cards
 const Projects = () => {
   const [filter, setFilter] = useState('All');
 

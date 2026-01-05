@@ -1,3 +1,9 @@
+/*
+  PostDetails.css — Styles for full post detail pages
+  - Includes carousel, image thumbnails, content formatting and mentions list
+  - Sections: layout grid, carousel, thumbnails, content
+*/
+
 .post-detail-grid {
     display: grid;
     grid-template-columns: 1fr;

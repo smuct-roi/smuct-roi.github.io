@@ -1,3 +1,9 @@
+/*
+  Navbar.css — Styles for the main navigation bar
+  - Desktop and mobile menu styling, logo and link states
+  - Sections: container, logo, desktop links, mobile menu
+*/
+
 /* --- Navbar Container (Sticky Logic) --- */
 .navbar {
   top: 0;

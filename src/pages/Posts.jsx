@@ -1,8 +1,16 @@
+/*
+  Posts.jsx — Posts listing with filters and sorting
+  - Supports search, category filter, date filter, and pinned sorting
+  - Sections: filters, post grid, no-results handling
+*/
+
 import React, { useState } from 'react';
 import { posts } from '../data/posts';
 import PostCard from '../components/PostCard';
 import './Posts.css';
 
+// --- Page Component: Posts
+// Local state: search, category, date filter and sort order
 const Posts = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('All');

@@ -1,3 +1,9 @@
+/*
+  Apply.css — Styles for the application page
+  - Card layout, CTA button and info lists
+  - Sections: card, icon, actions
+*/
+
 /* --- Background & Full Page Wrapper --- */
 .apply-page-wrapper {
   background-color: #ebebeb; /* Same as Home/Contact */

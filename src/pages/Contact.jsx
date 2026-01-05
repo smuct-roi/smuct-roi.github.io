@@ -1,3 +1,9 @@
+/*
+  Contact.jsx — Contact and feedback page
+  - Shows contact details, a feedback form and a map embed
+  - Sections: info column, form column, map section
+*/
+
 import React, { useState } from 'react';
 import './Contact.css';
 

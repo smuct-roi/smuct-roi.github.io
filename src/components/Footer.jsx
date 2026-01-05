@@ -1,7 +1,14 @@
+/*
+  Footer.jsx — Site footer component
+  - Renders quick links, brand visuals, and social links
+  - Sections: brand, quick links, socials, bottom bar
+*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
+// --- Footer component: renders site footer and quick links
 const Footer = () => {
   return (
     <footer className="footer-root">

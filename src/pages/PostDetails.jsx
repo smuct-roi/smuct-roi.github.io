@@ -26,7 +26,8 @@ const PostDetails = () => {
   const next = () => setIndex(i => (i + 1) % images.length);
   const goTo = (i) => setIndex(i);
 
-  // Parse content for @Name mentions, return array of nodes
+  // --- Content Parsing: parse @mentions into clickable member links
+  // renderContent: returns an array of React nodes with mention buttons when applicable
   const renderContent = (text) => {
     if (!text) return <p>No extended content available.</p>;
     const parts = [];
@@ -53,7 +54,7 @@ const PostDetails = () => {
     return <p>{parts}</p>;
   };
 
-  // Collect unique mentioned members for a small member-list
+  // --- Mentions Aggregation: gather unique members referenced by @mentions
   const mentioned = [];
   (post.content || '').replace(/@([A-Za-z]+(?:\s+[A-Za-z]+){0,3})/g, (_, name) => {
     const m = findMemberByName(name.trim());

@@ -1,11 +1,19 @@
+/*
+  ProjectCard.jsx — Compact project card used in lists/grids
+  - Shows image, title, badges, technologies and team avatars
+  - Sections: status helpers, click navigation, UI structure
+*/
+
 import React from 'react';
 import './ProjectCard.css';
 
+// --- Helper enum: ProjectStatus
 const ProjectStatus = {
   RUNNING: 'Running',
   COMPLETED: 'Completed'
 };
 
+// --- Navigation helper: used to open project detail on click
 import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = ({ project }) => {

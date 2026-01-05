@@ -1,3 +1,9 @@
+/*
+  index.css — Global base styles and small utilities
+  - Provides root variables, reset fragments, and selection rules
+  - Sections: root variables, typography, elements, utilities
+*/
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

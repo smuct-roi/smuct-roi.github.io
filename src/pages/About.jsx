@@ -1,3 +1,8 @@
+/*
+  About.jsx — Informational page describing mission and values
+  - Sections: intro, values, visual elements
+*/
+
 import React from 'react';
 import './About.css';
 
@@ -5,7 +10,8 @@ const About = () => {
   const coreValues = [
     { title: 'Open Innovation', desc: 'Every idea counts. We operate on the principle of open-source knowledge sharing.' },
     { title: 'Collaboration', desc: 'Robotics is multidisciplinary. We unite CSE and EEE.' },
-    { title: 'Impact', desc: 'We build for the real world. Every project must aim to solve a tangible problem.' }
+    { title: 'Impact', desc: 'We build for the real world. Every project must aim to solve a tangible problem.' },
+     { title: 'Test', desc: 'test' }
   ];
 
   return (
@@ -15,6 +21,17 @@ const About = () => {
         {/* Top Section */}
         <div className="hero-grid">
           <div className="content">
+             {/* Visual Element */}
+          <div className="visual">
+            <div className="image-box">
+              <img 
+                src="/logo/logo.png" 
+                alt="Innovation Hub" 
+                className="image"
+              />
+             
+            </div>
+          </div>
             <h1 className="title">Mission & Vision</h1>
             <p className="description">
               The Robotics & IoT Community was established to bridge the gap between theoretical engineering and practical innovation. We provide students with the resources, mentorship, and environment needed to build the hardware and software of tomorrow.
@@ -29,17 +46,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Visual Element */}
-          <div className="visual">
-            <div className="image-box">
-              <img 
-                src="public/logo/logo.png" 
-                alt="Innovation Hub" 
-                className="image"
-              />
-             
-            </div>
-          </div>
+         
         </div>
 
         {/* Values Section */}

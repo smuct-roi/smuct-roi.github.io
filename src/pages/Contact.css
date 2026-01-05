@@ -1,3 +1,9 @@
+/*
+  Contact.css — Styles for the contact page and forms
+  - Info column, form column and map embed styling
+  - Sections: layout, form, success overlay, map
+*/
+
 /* --- Global Reset & Background --- */
 html, body {
   margin: 0;

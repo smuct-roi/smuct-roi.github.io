@@ -1,3 +1,9 @@
+/*
+  Navbar.jsx — Primary navigation bar
+  - Contains logo, desktop links, and mobile menu toggle
+  - Sections: state, link list, rendering for desktop/mobile
+*/
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
@@ -7,6 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // --- Nav links configuration: used for desktop and mobile menus
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },

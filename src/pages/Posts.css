@@ -1,3 +1,9 @@
+/*
+  Posts.css — Styles for the posts listing page
+  - Filter controls, posts grid and empty states
+  - Sections: filters, grid, cards, responsiveness
+*/
+
 /* --- Filter & Sort Controls --- */
 .main-title, .posts-header{
    margin-top: 2rem;

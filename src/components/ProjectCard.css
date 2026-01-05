@@ -1,3 +1,9 @@
+/*
+  ProjectCard.css — Styles for project cards used across pages
+  - Header image, overlay, badges, tech tags and footer avatars
+  - Sections: header, body, tech tags, footer
+*/
+
 /* --- Container --- */
 .card-container {
   background-color: #ffffff;

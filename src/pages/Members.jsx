@@ -5,6 +5,8 @@ import { advisors, supervisors, developers } from '../data/members';
 import './Members.css';
 
 
+// --- Helpers: small utility functions local to the Members page
+// normalizeUrl: safe normalization of social links used by member cards
 const normalizeUrl = (u) => {
   if (!u) return null;
   if (u === '#') return null;
@@ -13,6 +15,8 @@ const normalizeUrl = (u) => {
   return `https://${s}`;
 };
 
+// --- Presentational MemberCard — compact UI for a single member
+// Props: member { id, name, role, image, socials }
 const MemberCard = ({ member }) => {
   const navigate = useNavigate();
   const handleClick = (e) => {
@@ -60,6 +64,8 @@ const MemberCard = ({ member }) => {
   );
 };
 
+// --- Page Component: Members
+// State and UI management for listing, searching and toggling members
 const Members = () => {
   const [query, setQuery] = useState('');
   const [showAll, setShowAll] = useState({

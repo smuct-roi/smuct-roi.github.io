@@ -1,3 +1,9 @@
+/*
+  About.css — Page styles for 'About' content
+  - Includes hero visuals and values grid
+  - Sections: hero, values, visuals
+*/
+
 /* --- Wrapper --- */
 .wrapper {
   background-color: #ebebeb;
@@ -5,7 +11,7 @@
   width: 100%;
 
   /* Space for sticky navbar */
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 5rem;
 
   box-sizing: border-box;
@@ -17,7 +23,7 @@
 html,
 body {
   height: auto;
-  /* overflow-x: hidden; ❌ REMOVED (was breaking sticky) */
+  
 }
 
 .container {

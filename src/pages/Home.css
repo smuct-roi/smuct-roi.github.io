@@ -1,3 +1,9 @@
+/*
+  Home.css — Styles for the Home (landing) page
+  - Hero, stats, feed, and featured projects styles
+  - Sections: wrapper, hero, feed, featured projects
+*/
+
 /* --- Global Home Wrapper --- */
 .home-wrapper {
   padding-bottom: auto;

@@ -1,3 +1,9 @@
+/*
+  Apply.jsx — Application page
+  - Presents instructions and a link to the external application form
+  - Sections: constants, hero content, action link
+*/
+
 import React from 'react';
 import './Apply.css';
 

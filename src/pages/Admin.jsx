@@ -1,3 +1,9 @@
+/*
+  Admin.jsx — Static admin portal (Phase 1)
+  - Provides developer instructions and basic workflow status information
+  - Sections: header, instruction cards, status cards
+*/
+
 import React from 'react';
 import './Admin.css';
 

@@ -1,3 +1,9 @@
+/*
+  App.jsx — Root application component and route definitions
+  - Defines application routes and provides global layout (Navbar/Footer)
+  - Sections: helpers (ScrollToTop), route configuration, layout
+*/
+
 import React, { useEffect, Suspense } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 

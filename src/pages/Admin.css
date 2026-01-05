@@ -1,3 +1,9 @@
+/*
+  Admin.css — Styles for the Admin portal page
+  - Cards, status badges, and instruction layout
+  - Sections: header, content cards, status list
+*/
+
 /* Layout & Container */
 .admin-wrapper {
   padding-top: 5rem;

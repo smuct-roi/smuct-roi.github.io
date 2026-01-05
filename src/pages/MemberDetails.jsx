@@ -1,3 +1,9 @@
+/*
+  MemberDetails.jsx — Detailed view for a single member
+  - Shows biography, projects, tags and social links for a member
+  - Sections: data lookup, project listing, tags toggles, layout
+*/
+
 import React, { useMemo, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { advisors, supervisors, developers } from '../data/members';

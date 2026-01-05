@@ -1,13 +1,21 @@
+/*
+  PostCard.jsx — List item representing a single post
+  - Renders cover image, meta, excerpt and read more action
+  - Sections: category helpers, click navigation, markup
+*/
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PostCard.css';
 
+// --- Category constants for post badges
 const PostCategory = {
   INNOVATION: 'Innovation',
   COMMUNITY: 'Community',
   NEWS: 'News'
 };
 
+// --- PostCard component: presentational; handles display and click navigation
 const PostCard = ({ post }) => {
   const getCategoryClass = (cat) => {
     switch (cat) {

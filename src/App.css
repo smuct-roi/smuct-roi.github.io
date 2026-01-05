@@ -1,3 +1,9 @@
+/*
+  App.css — Core layout and global app styles
+  - Sets base layout, app-wrapper, sticky navbar and global utilities
+  - Sections: global reset, layout, navbar, loading state
+*/
+
 /* --- Global Reset --- */
 html, body {
   margin: 0;

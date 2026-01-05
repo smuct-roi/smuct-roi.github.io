@@ -1,3 +1,9 @@
+/*
+  Members.css — Styles for the Members listing page
+  - Layout, member cards, search controls and section actions
+  - Sections: root, header, controls, card, responsiveness
+*/
+
 /* --- Root & Container --- */
 .members-wrapper {
   background-color: #f8fafc; /* Subtle off-white/blue background */

@@ -1,3 +1,9 @@
+/*
+  PostCard.css — Styles for the post list item component
+  - Covers image, badges, metadata and excerpt styles
+  - Sections: image container, meta, excerpt, actions
+*/
+
 /* --- Card Main Container --- */
 .post-card {
   background-color: #ffffff;
