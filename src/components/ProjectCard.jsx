@@ -9,15 +9,17 @@ import './ProjectCard.css';
 
 // --- Helper enum: ProjectStatus
 const ProjectStatus = {
-  RUNNING: 'Running',
-  COMPLETED: 'Completed'
+  RUNNING: '↺',
+  COMPLETED: '✅'
 };
 
 // --- Navigation helper: used to open project detail on click
 import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = ({ project }) => {
-  const isRunning = project.status === ProjectStatus.RUNNING;
+  // determine boolean from project's textual status (e.g., 'Running' / 'Completed')
+  const isRunning = String(project.status || '').toLowerCase().startsWith('run');
+  const statusSymbol = isRunning ? ProjectStatus.RUNNING : ProjectStatus.COMPLETED;
   const navigate = useNavigate();
 
   const handleClick = (e) => {
@@ -38,8 +40,9 @@ const ProjectCard = ({ project }) => {
           <h3 className="card-title">{project.title}</h3>
           <div className="card-header-right">
             {project.isPinned && <span className="pinned-badge">📌</span>}
-            <span className={`status-badge ${isRunning ? 'status-running' : 'status-completed'}`}>
-              {project.status}
+
+            <span className={`status-badge ${isRunning ? 'status-running' : 'status-completed'}`} aria-label={`Status: ${project.status}`}>
+              <span className="status-symbol" aria-hidden>{statusSymbol}</span>
             </span>
           </div>
         </div>
