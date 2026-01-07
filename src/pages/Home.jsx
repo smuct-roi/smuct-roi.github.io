@@ -10,6 +10,7 @@ import { posts } from '../data/posts';
 import { projects } from '../data/projects';
 import PostCard from '../components/PostCard';
 import ProjectCard from '../components/ProjectCard';
+import BannerCarousel from '../components/BannerCarousel';
 import './Home.css';
 import "./styles/global.css";
 
@@ -40,12 +41,23 @@ const Home = () => {
   const filteredPosts = useMemo(() => {
     const sorted = sortContent(posts);
     return sorted
-      .filter(p => 
-        p.title.toLowerCase().includes(search.toLowerCase()) || 
+      .filter(p =>
+        p.title.toLowerCase().includes(search.toLowerCase()) ||
         p.content.toLowerCase().includes(search.toLowerCase())
       )
       .slice(0, 3); // Show only top 3
   }, [search]);
+
+  // pinned posts ordered by pinnedSerial (ascending)
+  const pinnedPosts = useMemo(() => {
+    return posts
+      .filter(p => p.isPinned)
+      .sort((a, b) => {
+        const sa = typeof a.pinnedSerial === 'number' ? a.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        const sb = typeof b.pinnedSerial === 'number' ? b.pinnedSerial : Number.MAX_SAFE_INTEGER;
+        return sa - sb;
+      });
+  }, []);
 
   const featuredProjects = useMemo(() => {
     const sorted = sortContent(projects);
@@ -61,16 +73,33 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
-     {/* Hero Section */}
+      {/*News*/}
+      <div className='new-banner'>
+        <div className="status-tag-wrapper">
+          
+          <h1>Latest News!</h1>
+        </div>
+
+        {pinnedPosts && pinnedPosts.length > 0 ? (
+          <BannerCarousel items={pinnedPosts} />
+        ) : (
+          <div className="no-pinned">No pinned posts</div>
+        )}
+
+      </div>
+
+
+
+      {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg">
           <div className="radial-overlay"></div>
           <div className="texture-overlay"></div>
         </div>
-        
+
         <div className="hero-container">
           <div className="hero-content">
-            <span className="status-tag">Assalamu-Walaikum</span>
+
             <h1 className="hero-title">
               Engineering <span className="gradient-text">The Future</span> of Connectivity.
             </h1>
@@ -78,17 +107,17 @@ const Home = () => {
               The SMUCT Robotics & IoT Community is a hub for student innovation, building smart systems and autonomous solutions for real-world challenges.
             </p>
             <div className="hero-actions">
-            
+
             </div>
           </div>
         </div>
-        
+
         <div className="tech-pattern">
-           <svg width="400" height="400" viewBox="0 0 100 100" className="rotating-svg">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#00ff66" strokeWidth="0.5" strokeDasharray="5,5" />
-              <circle cx="50" cy="50" r="35" fill="none" stroke="#00ff66" strokeWidth="0.2" />
-              <rect x="25" y="25" width="50" height="50" fill="none" stroke="#00ff66" strokeWidth="0.5" />
-           </svg>
+          <svg width="400" height="400" viewBox="0 0 100 100" className="rotating-svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#00ff66" strokeWidth="0.5" strokeDasharray="5,5" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#00ff66" strokeWidth="0.2" />
+            <rect x="25" y="25" width="50" height="50" fill="none" stroke="#00ff66" strokeWidth="0.5" />
+          </svg>
         </div>
       </section>
 
@@ -114,12 +143,12 @@ const Home = () => {
               <h2 className="section-title">Community Feed</h2>
               <p className="section-subtitle">Stay updated with our latest activities.</p>
             </div>
-            
+
             <div className="feed-actions" style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
               <div className="search-box">
-                <input 
-                  type="text" 
-                  placeholder="Search posts..." 
+                <input
+                  type="text"
+                  placeholder="Search posts..."
                   className="search-input"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}

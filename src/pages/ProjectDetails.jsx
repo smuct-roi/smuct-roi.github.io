@@ -4,7 +4,7 @@
   - Sections: data lookup, carousel, team members, navigation
 */
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { advisors, supervisors, developers } from '../data/members';
@@ -27,6 +27,23 @@ const ProjectDetails = () => {
   const prev = () => setIndex(i => (i - 1 + images.length) % images.length);
   const next = () => setIndex(i => (i + 1) % images.length);
   const goTo = (i) => setIndex(i);
+
+  // Lightbox (full view) state & handlers
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const openLightbox = (i = index) => { if (!images.length) return; setIndex(i); setIsLightboxOpen(true); };
+  const closeLightbox = () => setIsLightboxOpen(false);
+
+  // keyboard navigation for lightbox
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isLightboxOpen, images.length]);
 
   // --- Helpers: resolve team member names to known member objects when possible
   const findMember = (name) => {
@@ -51,7 +68,7 @@ const ProjectDetails = () => {
             {current ? (
               <div className="carousel">
                 <button aria-label="Previous image" className="carousel-btn left" onClick={prev}>‹</button>
-                <img src={current} alt={`${project.title} - ${index + 1}`} className="carousel-img" />
+                <img src={current} alt={`${project.title} - ${index + 1}`} className="carousel-img" onClick={() => openLightbox(index)} style={{ cursor: 'zoom-in' }} role="button" />
                 <button aria-label="Next image" className="carousel-btn right" onClick={next}>›</button>
               </div>
             ) : (
@@ -65,6 +82,27 @@ const ProjectDetails = () => {
                     <img src={src} alt={`thumb-${i}`} />
                   </button>
                 ))}
+              </div>
+            )}
+
+            {isLightboxOpen && (
+              <div className="lightbox-overlay" onClick={(e) => { if (e.target.classList && e.target.classList.contains('lightbox-overlay')) closeLightbox(); }}>
+                <div className="lightbox-content" role="dialog" aria-modal="true">
+                  <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">×</button>
+                  <button aria-label="Previous" className="lightbox-btn left" onClick={(e) => { e.stopPropagation(); prev(); }}>‹</button>
+                  <img src={images[index]} alt={`${project.title} - ${index + 1}`} className="lightbox-img" />
+                  <button aria-label="Next" className="lightbox-btn right" onClick={(e) => { e.stopPropagation(); next(); }}>›</button>
+
+                  {images.length > 1 && (
+                    <div className="lightbox-thumbs">
+                      {images.map((src, i) => (
+                        <button key={i} className={`thumb-btn ${i === index ? 'active' : ''}`} onClick={(e) => { e.stopPropagation(); setIndex(i); }}>
+                          <img src={src} alt={`thumb-${i}`} />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>

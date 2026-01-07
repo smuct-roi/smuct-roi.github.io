@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="footer-copy">&copy; {new Date().getFullYear()} SMUCT Robotics & IoT Community. All rights reserved.</p>
-          <p className="footer-tagline">Designed for SMUCT-RoI</p>
+          <Link to="/members/smuct-22307109" className="footer-tagline" aria-label="Open developer profile">Developed By NH.Fahad</Link>
         </div>
       </div>
     </footer>

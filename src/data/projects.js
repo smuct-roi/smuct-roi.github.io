@@ -12,8 +12,8 @@ export const projects = [
     technologies: ['ROS', 'Python', 'C++', 'LiDAR', 'Arduino'],
     completionDate: '2024-05-15',
     status: ProjectStatus.COMPLETED,
-    images: ['https://picsum.photos/seed/rover1/800/600'],
-    team: ['Alex Johnson', 'Sam Lee', 'Mia Wang'],
+    images: ['https://picsum.photos/seed/rover1/800/600', 'https://picsum.photos/seed/rover1/800/600'],
+    team: ['Nazmul Haque Fahad'],
     isPinned: true,
     pinnedSerial: 1
   },
