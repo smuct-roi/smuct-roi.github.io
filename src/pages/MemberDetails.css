@@ -222,6 +222,8 @@
 
 .projects {
   display: grid;
+  padding-left: auto;
+  padding-right: auto;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 }
@@ -233,6 +235,12 @@
   border-radius: 40px;
   padding: 4rem;
   text-align: center;
+}
+.projects{
+
+  
+  padding-right: auto;
+  padding-right: auto;
 }
 
 .illustration {
