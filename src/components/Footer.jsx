@@ -46,9 +46,9 @@ const Footer = () => {
             <h3 className="footer-heading">Follow Us</h3>
             <div className="footer-social-flex">
               <a href="https://github.com/smuct-roi" className="footer-link">GitHub</a>
-              <a href="#" className="footer-link">LinkedIn</a>
+              <a href="#" className="footer-link">Linkedin</a>
               <a href="#" className="footer-link">Discord</a>
-              <a href="https://www.facebook.com/share/1DEvs5XabH/" className="footer-link">FaceBook</a>
+              <a href="https://www.facebook.com/share/1DEvs5XabH/" className="footer-link">Facebook</a>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="footer-copy">&copy; {new Date().getFullYear()} SMUCT Robotics & IoT Community. All rights reserved.</p>
-          <Link to="/members/SMUCT-22307109" className="footer-tagline" aria-label="Open developer profile">Developed By NH.Fahad</Link>
+          <Link to="https://smuct-roi.github.io/#/members/smuct-223071019" className="footer-tagline" aria-label="Open developer profile">Developed By NH.Fahad</Link>
         </div>
       </div>
     </footer>

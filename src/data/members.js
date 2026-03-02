@@ -69,13 +69,3 @@ export const developers = [
   
 ];
 
-export const committeeLeaders = {
-  president: {
-    name: 'Jason Bourne',
-    role: 'Committee President'
-  },
-  vicePresident: {
-    name: 'Samantha Reed',
-    role: 'Vice President'
-  }
-};

@@ -38,7 +38,9 @@ export const posts = [
     content: 'We appreciate the work by @Nazmul Haque Fahad on updating the site ',
     images: ['/postimages/p3.png'],
     source: 'smuct-roi.github.io',
-    isPinned: false,
+    isPinned: true,
+  
+    pinnedSerial: 3,
     people: ['Nazmul Haque Fahad','MD. Naim']
   }
 

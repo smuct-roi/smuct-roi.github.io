@@ -34,7 +34,7 @@ const BannerCarousel = ({ items = [] }) => {
     }
   };
 
-  // Pointer / touch handlers for swipe
+  // Pointer / touch handlers for swipe vs click detection
   const handlePointerDown = (e) => {
     pointerStartX.current = e.clientX ?? (e.touches && e.touches[0] && e.touches[0].clientX);
   };
@@ -43,7 +43,16 @@ const BannerCarousel = ({ items = [] }) => {
     if (pointerStartX.current == null) return;
     const endX = e.clientX ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX);
     const diff = pointerStartX.current - (endX ?? 0);
-    if (Math.abs(diff) > 50) {
+    
+    // If small movement (< 50px), treat as click
+    if (Math.abs(diff) < 50) {
+      // Click on active slide - navigate to that post
+      const activeItem = items[index];
+      if (activeItem) {
+        navigate(`/posts/${activeItem.id}`);
+      }
+    } else {
+      // If large movement (>= 50px), treat as swipe
       if (diff > 0) setIndex(i => (i + 1) % items.length);
       else setIndex(i => (i - 1 + items.length) % items.length);
       restartTimer();
@@ -67,7 +76,6 @@ const BannerCarousel = ({ items = [] }) => {
             <div
               key={item.id}
               className={cls}
-              onClick={() => navigate(`/posts/${item.id}`)}
               onMouseDown={handlePointerDown}
               onMouseUp={handlePointerUp}
               onTouchStart={handlePointerDown}
