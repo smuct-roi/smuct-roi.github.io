@@ -68,7 +68,7 @@ const PostDetails = () => {
       lastIndex = idx + match[0].length;
     }
     if (lastIndex < text.length) parts.push(text.slice(lastIndex));
-    return <p>{parts}</p>;
+    return <div className="post-content-preserved">{parts}</div>;
   };
 
   // --- Mentions Aggregation: gather unique members referenced by @mentions
