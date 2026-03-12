@@ -12,7 +12,7 @@ export const projects = [
     technologies: ['ROS', 'Python', 'C++', 'LiDAR', 'Arduino'],
     completionDate: '2024-05-15',
     status: ProjectStatus.COMPLETED,
-    images: ['https://picsum.photos/seed/rover1/800/600', 'https://picsum.photos/seed/rover1/800/600'],
+    
     team: ['Nazmul Haque Fahad'],
     isPinned: true,
     pinnedSerial: 1
@@ -25,7 +25,7 @@ export const projects = [
     technologies: ['LoRaWAN', 'ESP32', 'Node-RED', 'MQTT'],
     expectedCompletionDate: '2025-02-10',
     status: ProjectStatus.RUNNING,
-    images: ['https://picsum.photos/seed/iot1/800/600','https://picsum.photos/seed/arm/800/600'],
+    images: [],
     team: ['Sarah Chen', 'Kevin Smith'],
     isPinned: false
   },
@@ -37,7 +37,7 @@ export const projects = [
     technologies: ['OpenCV', 'MediaPipe', 'Servo Motors', 'Raspberry Pi'],
     completionDate: '2024-11-20',
     status: ProjectStatus.COMPLETED,
-    images: ['https://picsum.photos/seed/arm/800/600'],
+    images: [],
     team: ['Nazmul Haque Fahad', 'Elena Rodriguez'],
     isPinned: false
   }

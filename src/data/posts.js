@@ -27,7 +27,7 @@ export const posts = [
     images: ['/postimages/p1.jpeg'],
     source: 'google.com',
     isPinned: true,
-    pinnedSerial: 1
+    pinnedSerial: 3
   },
 {
     id: 'acc1',
@@ -104,12 +104,12 @@ SMUCT extends its sincere congratulations to the newly appointed council members
 #ExecutiveCouncil2026 
 #Leadership
 #Innovation `,
-    images: ['/postimages/acc1.1.jpeg','/postimages/acc1.2.jpeg','/postimages/acc1.3.jpeg','/postimages/acc1.4.jpeg','/postimages/acc1.5.jpeg','/postimages/acc1.6.jpeg','/postimages/acc1.7.jpeg','/postimages/acc1.8.jpeg','/postimages/acc1.9.jpeg','/postimages/acc1.10.jpeg','/postimages/acc1.11.jpeg','/postimages/acc1.12.jpeg','/postimages/acc1.13.jpeg'],
+    images: ['/postimages/acc1.png','/postimages/acc1.1.jpeg','/postimages/acc1.2.jpeg','/postimages/acc1.3.jpeg','/postimages/acc1.4.jpeg','/postimages/acc1.5.jpeg','/postimages/acc1.6.jpeg','/postimages/acc1.7.jpeg','/postimages/acc1.8.jpeg','/postimages/acc1.9.jpeg','/postimages/acc1.10.jpeg','/postimages/acc1.11.jpeg','/postimages/acc1.12.jpeg','/postimages/acc1.13.jpeg'],
     source: 'smuct-roi.github.io',
     isPinned: true,
     source: 'smuct-roi.github.io',
   
-    pinnedSerial: 3,
+    pinnedSerial: 1,
     people: ['Nazmul Haque Fahad','MD. Naim']
     
   }
