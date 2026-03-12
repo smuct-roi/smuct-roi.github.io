@@ -32,9 +32,11 @@
 }
 
 .navbar-container {
-  max-width: 80rem;
+  max-width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 4vw, 1.5rem);
+  width: 100%;
 }
 
 .navbar-flex {
@@ -155,4 +157,23 @@
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .navbar-flex {
+    height: 70px;
+  }
+  
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .logo-image {
+    height: 40px;
+  }
+  
+  .mobile-menu {
+    top: 70px;
+  }
 }

@@ -10,36 +10,50 @@
   color:#1a1a1a;
 }
 .posts-wrapper {
-   margin-top: 5rem;
-  background-color: #ebebeb; /* Your requested background */
+  margin-top: 5rem;
+  background-color: #ebebeb;
   min-height: 100vh;
-  
+  padding: 0 clamp(1rem, 3vw, 1.5rem);
+}
 
+@media (max-width: 640px) {
+  .posts-wrapper {
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
 }
 
 .filter-controls {
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap; /* Stacks on small screens */
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .filter-controls {
+    justify-content: space-between;
+    padding: 0;
+  }
 }
 
 /* Category Chips */
 .category-chips {
   display: flex;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
   overflow-x: auto;
   padding-bottom: 5px;
   /* Hide scrollbar but keep functionality */
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .category-chips::-webkit-scrollbar { display: none; }
 
 .chip {
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem clamp(1rem, 2vw, 1.25rem);
   border-radius: 99px;
   border: 1px solid #e2e8f0;
   background: #ffffff;
@@ -103,9 +117,7 @@
 }
 /* --- Filter Panel Container --- */
 .filter-panel {
- 
-  
-  padding: px;
+  padding: 1.5rem;
   border-radius: 20px;
   border: 1px solid #dcdcdc;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);

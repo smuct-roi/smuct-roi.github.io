@@ -50,7 +50,14 @@
 
 }
 .post-content-preserved{
+    background-color: rgb(212, 212, 212);
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    border-radius: 1%;
+    padding-left: .7rem;
+    padding-top: .7rem;
+    padding-right: .7rem;
+    padding-bottom: .7rem
+    ;
 }

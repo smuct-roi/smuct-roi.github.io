@@ -1,15 +1,10 @@
 .banner-carousel {
   position: relative;
-  width: 95%;
-  max-width: 95%;
-  
-
+  width: 100%;
+  max-width: 100%;
   margin: 1rem auto;
   border-radius: 12px;
   overflow: hidden;
-  
- 
-  
   background: #ffffff;
   box-shadow: 0 8px 20px rgba(11, 14, 23, 0.06);
 }
@@ -103,6 +98,24 @@
 }
 
 @media (max-width: 640px) {
-  .slides { height: 180px; }
-  .slide img { height: 180px; }
+  .banner-carousel {
+    margin: 0.5rem auto;
+    border-radius: 8px;
+  }
+  .slides {
+    height: 180px;
+  }
+  .slide img {
+    height: 180px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .prev-btn {
+    left: 8px;
+  }
+  .next-btn {
+    right: 8px;
+  }
 }

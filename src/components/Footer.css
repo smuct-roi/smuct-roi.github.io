@@ -6,9 +6,9 @@
 
 /* --- Root Styling --- */
 .footer-root {
-  background-color: #000000; /* Very dark slate/black */
+  background-color: #000000;
   color: #94a3b8;
-  padding-top: 5rem;
+  padding-top: clamp(3rem, 8vw, 5rem);
   padding-bottom: 2rem;
   border-top: 1px solid #1e293b;
   position: relative;
@@ -30,19 +30,30 @@
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
 /* --- Grid Layout --- */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 4rem);
   margin-bottom: 4rem;
 }
 
-/* --- Brand Section --- */
-.footer-brand-section {
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -79,6 +90,13 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .footer-links-list {
+    align-items: center;
+  }
 }
 
 .footer-link {

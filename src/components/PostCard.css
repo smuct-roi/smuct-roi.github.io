@@ -32,7 +32,7 @@
 /* --- Image Section --- */
 .post-image-container {
   position: relative;
-  height: 14rem; /* h-56 */
+  height: clamp(12rem, 30vw, 14rem);
   width: 100%;
   overflow: hidden;
 }
@@ -106,7 +106,7 @@
 
 /* --- Content Section --- */
 .post-content {
-  padding: 2.5rem; /* p-10 */
+  padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .post-meta {
