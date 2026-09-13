@@ -52,7 +52,37 @@ export const supervisors = [ //Members ignore supervisors
     image: '/membersimage/imon36.png',
     bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
     socials: { linkedin: 'https://www.linkedin.com/in/mdimonhosen', github: 'https://github.com/mdimonhosen' }
+  },{ id: 'smuct-232071071',
+    name: 'Abdul Kader Anik',
+    role: 'Member',
+    department: 'CSE & CSIT',
+    image: '/membersimage/anik.png',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+    socials: { /*linkedin: 'https://www.linkedin.com/in/',*/ github: 'https://github.com/anik071' }
+  },{ id: 'smuct-232071110',
+    name: 'Shahajadi Akter',
+    role: 'Member',
+    department: 'CSE & CSIT',
+    image: '/membersimage/shahajadi.png',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+    socials: { linkedin: 'https://www.linkedin.com/in/shahajadi-akter-92a404358', github: 'https://github.com/shahu1234' }
+  },{ id: 'smuct-232061003',
+    name: 'Shajid hasan',
+    role: 'Member',
+    department: 'CSE & CSIT',
+    image: '/membersimage/shajid.png',
+    bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+    socials: { /*linkedin: 'https://www.linkedin.com/in/', github: 'https://github.com/'*/ }
   }
+  // ,{ id: 'smuct-232061003',
+  //   name: 'Junayed hasan Shuvo',
+  //   role: 'Member',
+  //   department: 'CSE & CSIT',
+  //   image: '/membersimage/junayed.png',
+  //   bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
+  //   socials: { /*linkedin: 'https://www.linkedin.com/in/', github: 'https://github.com/'*/ }
+  // },
+
 
 ];
 
