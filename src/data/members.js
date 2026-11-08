@@ -52,15 +52,6 @@ export const supervisors = [ //Members ignore supervisors
     image: '/membersimage/imon36.png',
     bio: 'Tech-driven CSE undergraduate dedicated to learning, building, and improving digital systems',
     socials: { linkedin: 'https://www.linkedin.com/in/mdimonhosen', github: 'https://github.com/mdimonhosen' }
-  },
-   {
-   id: 'smuct-223071041',
-    name: 'Zubayed Amin',
-    role: 'Graphic Designer',
-    department: 'CSE & CSIT',
-    image: '/membersimage/zubayed.png',
-    bio: 'The Graphics Designer of SMUCT Robotics & IoT Community',
-    socials: { linkedin: 'linkedin.com/in/zubayed-amin', github: 'github.com/Zubayed-Amin' }
   }
 
 ];
@@ -69,7 +60,7 @@ export const developers = [
   {
     id: 'smuct-223071019',
     name: 'Nazmul Haque Fahad',
-    role:['Head of The Department of Research and Development'],
+    role:['Head of Department of Research and Development'],
     department: 'CSE & CSIT',
     image: '/membersimage/developer.png',
     bio: 'The developer of SMUCT Robotics & IoT Community Website and leads several projects on IoT  ',

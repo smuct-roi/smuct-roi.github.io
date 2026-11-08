@@ -110,6 +110,25 @@
   display: block;
 }
 
+/* --- Development Banner --- */
+.dev-banner {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #92400e;
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .dev-banner {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .mobile-toggle {
     display: none;

@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="navbar-logo-wrapper">
             <Link to="/" className="navbar-logo-link">
               <img
-                src="\logo\logo.png"  // replace with your logo path
+                src="/logo/logo.png"
                 alt="SMUCT Robotics & IoT Logo"
                 className="logo-image"
               />
@@ -43,7 +43,7 @@ const Navbar = () => {
               
             </Link>
           </div>
-          <h>This website is under development</h>
+          <span className="dev-banner">🚧 This website is under development</span>
 
 
           {/* Desktop Links */}
