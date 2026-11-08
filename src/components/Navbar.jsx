@@ -39,9 +39,11 @@ const Navbar = () => {
                 alt="SMUCT Robotics & IoT Logo"
                 className="logo-image"
               />
-              <span className="logo-text"></span>
+            
+              
             </Link>
           </div>
+          <h>This website is under development</h>
 
 
           {/* Desktop Links */}
